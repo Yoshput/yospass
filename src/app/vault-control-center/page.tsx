@@ -23,9 +23,10 @@ import {
   Sparkles,
   Package,
   Sun,
-  Moon
+  Moon,
+  Ticket
 } from 'lucide-react';
-import { AdminStats, AccountInventory, Order, Product, ProductVariant } from '@/lib/types';
+import { AdminStats, AccountInventory, Order, Product, ProductVariant, Voucher } from '@/lib/types';
 import { BrandIcon, YosPassLogo } from '@/components/BrandLogos';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTheme } from '@/components/ThemeContext';
@@ -40,7 +41,7 @@ export default function VaultControlCenter() {
   const [pinInput, setPinInput] = useState('');
   const [pinError, setPinError] = useState('');
 
-  const [activeTab, setActiveTab] = useState<'products' | 'inventory' | 'orders' | 'bulk'>('products');
+  const [activeTab, setActiveTab] = useState<'products' | 'inventory' | 'orders' | 'bulk' | 'vouchers'>('products');
   const [loading, setLoading] = useState(false);
   const [stats, setStats] = useState<AdminStats | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
@@ -99,6 +100,16 @@ export default function VaultControlCenter() {
   // Password visibility map
   const [visiblePasswords, setVisiblePasswords] = useState<{ [id: string]: boolean }>({});
 
+  // Voucher State
+  const [vouchers, setVouchers] = useState<Voucher[]>([]);
+  const [vchCode, setVchCode] = useState('');
+  const [vchType, setVchType] = useState<'PERCENTAGE' | 'FIXED'>('PERCENTAGE');
+  const [vchValue, setVchValue] = useState('');
+  const [vchMaxUsage, setVchMaxUsage] = useState('0');
+  const [vchDescription, setVchDescription] = useState('');
+  const [vchMinPurchase, setVchMinPurchase] = useState('');
+  const [vchMaxDiscount, setVchMaxDiscount] = useState('');
+
   const notify = (text: string, type: 'success' | 'error' = 'success') => {
     setStatusMessage({ text, type });
     setTimeout(() => setStatusMessage(null), 4000);
@@ -134,13 +145,15 @@ export default function VaultControlCenter() {
   const fetchDashboardData = async () => {
     try {
       setLoading(true);
-      const [resStats, resProd] = await Promise.all([
+      const [resStats, resProd, resVouchers] = await Promise.all([
         fetch('/api/admin/stats'),
-        fetch('/api/admin/products')
+        fetch('/api/admin/products'),
+        fetch('/api/admin/vouchers')
       ]);
 
       const jsonStats = await resStats.json();
       const jsonProd = await resProd.json();
+      const jsonVouchers = await resVouchers.json();
 
       if (jsonStats.success) {
         setStats(jsonStats.data.stats);
@@ -154,6 +167,10 @@ export default function VaultControlCenter() {
           if (!selectedVariantId) setSelectedVariantId(jsonProd.data[0].variants[0].id);
           if (!bulkVariantId) setBulkVariantId(jsonProd.data[0].variants[0].id);
         }
+      }
+
+      if (jsonVouchers.vouchers) {
+        setVouchers(jsonVouchers.vouchers);
       }
     } catch (e) {
       console.error(e);
@@ -758,6 +775,20 @@ export default function VaultControlCenter() {
             <Layers className="w-3.5 h-3.5" />
             <span>Import Massal (Bulk Stock)</span>
           </button>
+
+          <button
+            onClick={() => setActiveTab('vouchers')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 shrink-0 ${
+              activeTab === 'vouchers'
+                ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
+                : isLight
+                ? 'text-slate-700 hover:text-slate-950 hover:bg-white/80'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
+            }`}
+          >
+            <Ticket className="w-3.5 h-3.5" />
+            <span>Voucher ({vouchers.length})</span>
+          </button>
         </div>
 
         {/* ================= TAB 1: PRODUCT & VARIANT CRUD ================= */}
@@ -1332,6 +1363,220 @@ export default function VaultControlCenter() {
                 Proses Import Massal
               </button>
             </form>
+          </div>
+        )}
+
+        {/* ================= TAB 5: VOUCHER MANAGEMENT ================= */}
+        {activeTab === 'vouchers' && (
+          <div className="space-y-6">
+            {/* Create Voucher */}
+            <div
+              className={`p-6 rounded-2xl border transition-all ${
+                isLight ? 'bg-white border-slate-200/90 shadow-sm' : 'glass-card border-white/[0.08]'
+              }`}
+            >
+              <h3 className={`text-sm font-bold mb-1 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                Buat Voucher Diskon Baru
+              </h3>
+              <p className={`text-xs mb-4 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                Buat kode promo khusus untuk pelanggan atau reseller. Bisa persentase (5%, 10%) atau nominal tetap.
+              </p>
+
+              <form onSubmit={async (e) => {
+                e.preventDefault();
+                if (!vchCode || !vchValue) { notify('Kode dan nilai diskon wajib diisi', 'error'); return; }
+                try {
+                  const res = await fetch('/api/admin/vouchers', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      code: vchCode, discountType: vchType, discountValue: vchValue,
+                      maxUsage: vchMaxUsage, description: vchDescription,
+                      minPurchase: vchMinPurchase || undefined, maxDiscount: vchMaxDiscount || undefined
+                    })
+                  });
+                  const json = await res.json();
+                  if (json.success) {
+                    notify(`Voucher "${json.voucher.code}" berhasil dibuat!`);
+                    setVchCode(''); setVchValue(''); setVchDescription('');
+                    setVchMinPurchase(''); setVchMaxDiscount(''); setVchMaxUsage('0');
+                    fetchDashboardData();
+                  } else { notify(json.error || 'Gagal buat voucher', 'error'); }
+                } catch { notify('Gagal buat voucher', 'error'); }
+              }} className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                  <label className={`text-[11px] font-semibold block mb-1 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                    Kode Voucher
+                  </label>
+                  <input type="text" value={vchCode} onChange={(e) => setVchCode(e.target.value.toUpperCase())} placeholder="YOSPASS10"
+                    required className={`w-full px-3 py-2 rounded-xl border text-xs font-mono font-bold uppercase focus:outline-none ${
+                      isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-blue-600' : 'bg-white/[0.04] border-white/10 text-white focus:border-blue-500'
+                    }`} />
+                </div>
+                <div>
+                  <label className={`text-[11px] font-semibold block mb-1 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                    Tipe Diskon
+                  </label>
+                  <select value={vchType} onChange={(e: any) => setVchType(e.target.value)}
+                    className={`w-full px-3 py-2 rounded-xl border text-xs focus:outline-none ${
+                      isLight ? 'bg-slate-50 border-slate-300 text-slate-900' : 'bg-slate-900 border-white/10 text-white'
+                    }`}>
+                    <option value="PERCENTAGE">Persentase (%)</option>
+                    <option value="FIXED">Nominal Tetap (Rp)</option>
+                  </select>
+                </div>
+                <div>
+                  <label className={`text-[11px] font-semibold block mb-1 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                    Nilai ({vchType === 'PERCENTAGE' ? '%' : 'Rp'})
+                  </label>
+                  <input type="number" value={vchValue} onChange={(e) => setVchValue(e.target.value)} placeholder={vchType === 'PERCENTAGE' ? '10' : '5000'}
+                    required className={`w-full px-3 py-2 rounded-xl border text-xs focus:outline-none ${
+                      isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-blue-600' : 'bg-white/[0.04] border-white/10 text-white focus:border-blue-500'
+                    }`} />
+                </div>
+                <div>
+                  <label className={`text-[11px] font-semibold block mb-1 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                    Maks. Penggunaan (0 = unlimited)
+                  </label>
+                  <input type="number" value={vchMaxUsage} onChange={(e) => setVchMaxUsage(e.target.value)} placeholder="0"
+                    className={`w-full px-3 py-2 rounded-xl border text-xs focus:outline-none ${
+                      isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-blue-600' : 'bg-white/[0.04] border-white/10 text-white focus:border-blue-500'
+                    }`} />
+                </div>
+                <div>
+                  <label className={`text-[11px] font-semibold block mb-1 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                    Min. Pembelian (Rp, opsional)
+                  </label>
+                  <input type="number" value={vchMinPurchase} onChange={(e) => setVchMinPurchase(e.target.value)} placeholder="25000"
+                    className={`w-full px-3 py-2 rounded-xl border text-xs focus:outline-none ${
+                      isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-blue-600' : 'bg-white/[0.04] border-white/10 text-white focus:border-blue-500'
+                    }`} />
+                </div>
+                <div>
+                  <label className={`text-[11px] font-semibold block mb-1 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                    Maks. Diskon (Rp, opsional)
+                  </label>
+                  <input type="number" value={vchMaxDiscount} onChange={(e) => setVchMaxDiscount(e.target.value)} placeholder="50000"
+                    className={`w-full px-3 py-2 rounded-xl border text-xs focus:outline-none ${
+                      isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-blue-600' : 'bg-white/[0.04] border-white/10 text-white focus:border-blue-500'
+                    }`} />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className={`text-[11px] font-semibold block mb-1 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                    Deskripsi (opsional)
+                  </label>
+                  <input type="text" value={vchDescription} onChange={(e) => setVchDescription(e.target.value)} placeholder="Diskon 10% untuk semua produk"
+                    className={`w-full px-3 py-2 rounded-xl border text-xs focus:outline-none ${
+                      isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-blue-600' : 'bg-white/[0.04] border-white/10 text-white focus:border-blue-500'
+                    }`} />
+                </div>
+                <div className="flex items-end">
+                  <button type="submit" className="apple-btn-primary w-full py-2.5 rounded-xl text-xs font-bold cursor-pointer shadow-md shadow-blue-500/20">
+                    + Buat Voucher
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            {/* Voucher List */}
+            <div
+              className={`p-6 rounded-2xl border transition-all ${
+                isLight ? 'bg-white border-slate-200/90 shadow-sm' : 'glass-card border-white/[0.08]'
+              }`}
+            >
+              <h3 className={`text-sm font-bold mb-1 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                Daftar Voucher ({vouchers.length})
+              </h3>
+              <p className={`text-xs mb-4 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                Kelola semua kode voucher diskon. Toggle aktif/nonaktif atau hapus.
+              </p>
+
+              {vouchers.length === 0 ? (
+                <p className={`text-xs py-8 text-center ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+                  Belum ada voucher. Buat voucher pertama di atas!
+                </p>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-xs">
+                    <thead>
+                      <tr className={`border-b ${isLight ? 'border-slate-200 text-slate-500 font-bold' : 'border-white/10 text-slate-400'}`}>
+                        <th className="pb-2.5">Kode</th>
+                        <th className="pb-2.5">Diskon</th>
+                        <th className="pb-2.5">Penggunaan</th>
+                        <th className="pb-2.5">Deskripsi</th>
+                        <th className="pb-2.5">Status</th>
+                        <th className="pb-2.5 text-right">Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody className={`divide-y ${isLight ? 'divide-slate-100' : 'divide-white/[0.05]'}`}>
+                      {vouchers.map((v) => (
+                        <tr key={v.id} className={isLight ? 'hover:bg-slate-50/80' : 'hover:bg-white/[0.02]'}>
+                          <td className={`py-3 font-mono font-black ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                            {v.code}
+                          </td>
+                          <td className="py-3">
+                            <span className="font-bold">
+                              {v.discountType === 'PERCENTAGE' ? `${v.discountValue}%` : `Rp ${v.discountValue.toLocaleString('id-ID')}`}
+                            </span>
+                            {v.maxDiscount && v.discountType === 'PERCENTAGE' && (
+                              <span className={`text-[10px] block ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+                                maks Rp {v.maxDiscount.toLocaleString('id-ID')}
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-3">
+                            {v.usedCount}/{v.maxUsage === 0 ? '∞' : v.maxUsage}
+                          </td>
+                          <td className={`py-3 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                            {v.description || '-'}
+                          </td>
+                          <td className="py-3">
+                            <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                              v.isActive
+                                ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20'
+                                : 'bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/20'
+                            }`}>
+                              {v.isActive ? 'AKTIF' : 'NONAKTIF'}
+                            </span>
+                          </td>
+                          <td className="py-3 text-right space-x-1">
+                            <button
+                              onClick={async () => {
+                                await fetch('/api/admin/vouchers', {
+                                  method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({ id: v.id })
+                                });
+                                fetchDashboardData();
+                              }}
+                              className={`px-2 py-1 rounded-lg text-[11px] font-bold transition-colors cursor-pointer ${
+                                v.isActive
+                                  ? 'bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-300'
+                                  : 'bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-300'
+                              }`}
+                            >
+                              {v.isActive ? 'Nonaktifkan' : 'Aktifkan'}
+                            </button>
+                            <button
+                              onClick={async () => {
+                                if (!confirm(`Hapus voucher ${v.code}?`)) return;
+                                await fetch('/api/admin/vouchers', {
+                                  method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({ id: v.id })
+                                });
+                                fetchDashboardData();
+                              }}
+                              className="p-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-300 transition-colors cursor-pointer"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
           </div>
         )}
       </main>

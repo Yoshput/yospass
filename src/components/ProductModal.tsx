@@ -10,7 +10,7 @@ import { useTheme } from './ThemeContext';
 interface ProductModalProps {
   product: Product | null;
   onClose: () => void;
-  onProceedToPayment: (variant: ProductVariant, phone: string, email: string, method: string) => void;
+  onProceedToPayment: (variant: ProductVariant, phone: string, email: string, method: string, voucherCode?: string) => void;
   loading: boolean;
 }
 
@@ -31,6 +31,11 @@ export default function ProductModal({
   const [customerEmail, setCustomerEmail] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'QRIS' | 'BCA_VA' | 'GOPAY'>('QRIS');
   const [errorMsg, setErrorMsg] = useState('');
+  const [voucherCode, setVoucherCode] = useState('');
+  const [voucherDiscount, setVoucherDiscount] = useState(0);
+  const [voucherMsg, setVoucherMsg] = useState('');
+  const [voucherValid, setVoucherValid] = useState(false);
+  const [voucherLoading, setVoucherLoading] = useState(false);
 
   const handleCheckout = () => {
     setErrorMsg('');
@@ -44,7 +49,33 @@ export default function ProductModal({
       return;
     }
 
-    onProceedToPayment(selectedVariant, customerPhone.trim(), customerEmail.trim(), paymentMethod);
+    onProceedToPayment(selectedVariant, customerPhone.trim(), customerEmail.trim(), paymentMethod, voucherValid ? voucherCode.trim() : undefined);
+  };
+
+  const handleApplyVoucher = async () => {
+    if (!voucherCode.trim()) return;
+    setVoucherLoading(true);
+    setVoucherMsg('');
+    setVoucherDiscount(0);
+    setVoucherValid(false);
+    try {
+      const res = await fetch('/api/vouchers/validate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: voucherCode.trim(), amount: selectedVariant.price })
+      });
+      const data = await res.json();
+      if (data.valid) {
+        setVoucherDiscount(data.discount || 0);
+        setVoucherValid(true);
+        setVoucherMsg(`Diskon Rp ${(data.discount || 0).toLocaleString('id-ID')} berhasil diterapkan!`);
+      } else {
+        setVoucherMsg(data.error || 'Voucher tidak valid.');
+      }
+    } catch {
+      setVoucherMsg('Gagal memvalidasi voucher.');
+    }
+    setVoucherLoading(false);
   };
 
   const isOutOfStock = (selectedVariant.stockCount || 0) <= 0;
@@ -313,6 +344,45 @@ export default function ProductModal({
           </div>
         </div>
 
+        {/* 4. Kode Voucher */}
+        <div className="mt-4">
+          <label className={`text-[11px] mb-1 block font-medium ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            Punya Kode Voucher / Diskon?
+          </label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={voucherCode}
+              onChange={(e) => { setVoucherCode(e.target.value.toUpperCase()); setVoucherValid(false); setVoucherMsg(''); setVoucherDiscount(0); }}
+              placeholder="Masukkan kode voucher"
+              className={`flex-1 px-3 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider focus:outline-none transition-all ${
+                isLight
+                  ? 'bg-slate-50 border border-slate-200 text-slate-900 focus:border-blue-600'
+                  : 'bg-white/[0.04] border border-white/10 text-white focus:border-blue-500'
+              }`}
+            />
+            <button
+              type="button"
+              onClick={handleApplyVoucher}
+              disabled={!voucherCode.trim() || voucherLoading}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                voucherValid
+                  ? 'bg-emerald-600 text-white'
+                  : isLight
+                  ? 'bg-blue-600 text-white hover:bg-blue-700 disabled:bg-slate-200 disabled:text-slate-400'
+                  : 'bg-blue-600 text-white hover:bg-blue-700 disabled:bg-white/5 disabled:text-slate-500'
+              } disabled:cursor-not-allowed`}
+            >
+              {voucherLoading ? '...' : voucherValid ? '✓' : 'Pakai'}
+            </button>
+          </div>
+          {voucherMsg && (
+            <p className={`text-[11px] mt-1 font-medium ${voucherValid ? 'text-emerald-500' : 'text-rose-500'}`}>
+              {voucherMsg}
+            </p>
+          )}
+        </div>
+
         {/* Error message */}
         {errorMsg && (
           <div className="mt-4 p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center gap-2 text-rose-500 text-xs">
@@ -331,8 +401,13 @@ export default function ProductModal({
             <span className={`text-[11px] uppercase tracking-wider block font-bold ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
               Total Pembayaran
             </span>
+            {voucherValid && voucherDiscount > 0 && (
+              <span className={`text-xs line-through mr-2 ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+                Rp {selectedVariant.price.toLocaleString('id-ID')}
+              </span>
+            )}
             <span className={`text-xl sm:text-2xl font-black ${isLight ? 'text-slate-900' : 'text-white'}`}>
-              Rp {selectedVariant.price.toLocaleString('id-ID')}
+              Rp {(selectedVariant.price - (voucherValid ? voucherDiscount : 0)).toLocaleString('id-ID')}
             </span>
           </div>
 

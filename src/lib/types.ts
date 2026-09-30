@@ -78,3 +78,22 @@ export interface AdminStats {
   availableStock: number;
   soldStock: number;
 }
+
+export type DiscountType = 'PERCENTAGE' | 'FIXED';
+
+export interface Voucher {
+  id: string;
+  code: string; // e.g. "YOSPASS10", "DISKON5"
+  discountType: DiscountType;
+  discountValue: number; // percentage (5, 10) or fixed IDR amount
+  minPurchase?: number; // minimum order amount to use voucher
+  maxDiscount?: number; // cap for percentage discounts
+  maxUsage: number; // total times this voucher can be used (0 = unlimited)
+  usedCount: number; // how many times it has been used
+  isActive: boolean;
+  description?: string; // e.g. "Diskon 10% untuk semua produk"
+  validFrom?: string; // ISO date string
+  validUntil?: string; // ISO date string
+  createdAt: string;
+  appliedOrderIds?: string[]; // track which orders used this voucher
+}

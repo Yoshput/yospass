@@ -27,12 +27,19 @@ export default function PaymentModal({ orderData, onClose }: PaymentModalProps) 
   const { toast } = useToast();
   const isLight = theme === 'light';
 
-  const [timeLeft, setTimeLeft] = useState(15 * 60); // 15 mins
+  const calcTimeLeft = () => {
+    if (!orderData?.expiresAt) return 15 * 60;
+    const diff = Math.floor((new Date(orderData.expiresAt).getTime() - Date.now()) / 1000);
+    return diff > 0 ? diff : 0;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
   const [simulating, setSimulating] = useState(false);
   const [copiedInvoice, setCopiedInvoice] = useState(false);
 
   useEffect(() => {
     if (!orderData) return;
+    setTimeLeft(calcTimeLeft());
 
     const interval = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));

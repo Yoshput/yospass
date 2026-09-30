@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-import { Product, ProductVariant, AccountInventory, Order, AdminStats, StockStatus } from './types';
+import { Product, ProductVariant, AccountInventory, Order, AdminStats, StockStatus, Voucher } from './types';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const LOCAL_DB_PATH = path.join(DATA_DIR, 'database.json');
@@ -1155,6 +1155,7 @@ interface DatabaseSchema {
   products: Product[];
   inventory: AccountInventory[];
   orders: Order[];
+  vouchers: Voucher[];
 }
 
 function ensureDatabase(): DatabaseSchema {
@@ -1189,8 +1190,14 @@ function ensureDatabase(): DatabaseSchema {
     dbData = {
       products: INITIAL_PRODUCTS,
       inventory: INITIAL_INVENTORY,
-      orders: []
+      orders: [],
+      vouchers: []
     };
+  }
+
+  // Ensure vouchers array exists (for older databases)
+  if (!dbData.vouchers) {
+    dbData.vouchers = [];
   }
 
   // 4. Ensure all initial products & inventory exist
@@ -1618,5 +1625,91 @@ export const dbStore = {
   getAllOrders(): Order[] {
     const db = ensureDatabase();
     return db.orders.map(o => this.getOrder(o.invoiceNumber) || o);
+  },
+
+  // ==================== VOUCHER SYSTEM ====================
+
+  createVoucher(data: Omit<Voucher, 'id' | 'usedCount' | 'createdAt' | 'appliedOrderIds'>): Voucher {
+    const db = ensureDatabase();
+    const voucher: Voucher = {
+      ...data,
+      id: `vch-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      code: data.code.toUpperCase().trim(),
+      usedCount: 0,
+      appliedOrderIds: [],
+      createdAt: new Date().toISOString()
+    };
+    db.vouchers.push(voucher);
+    saveDatabase(db);
+    return voucher;
+  },
+
+  getAllVouchers(): Voucher[] {
+    const db = ensureDatabase();
+    return db.vouchers || [];
+  },
+
+  validateVoucher(code: string, orderAmount: number): { valid: boolean; voucher?: Voucher; discount?: number; error?: string } {
+    const db = ensureDatabase();
+    const voucher = db.vouchers.find(v => v.code === code.toUpperCase().trim());
+
+    if (!voucher) return { valid: false, error: 'Kode voucher tidak ditemukan.' };
+    if (!voucher.isActive) return { valid: false, error: 'Voucher sudah tidak aktif.' };
+
+    const now = new Date();
+    if (voucher.validFrom && new Date(voucher.validFrom) > now) return { valid: false, error: 'Voucher belum berlaku.' };
+    if (voucher.validUntil && new Date(voucher.validUntil) < now) return { valid: false, error: 'Voucher sudah kedaluwarsa.' };
+    if (voucher.maxUsage > 0 && voucher.usedCount >= voucher.maxUsage) return { valid: false, error: 'Voucher sudah mencapai batas penggunaan.' };
+    if (voucher.minPurchase && orderAmount < voucher.minPurchase) {
+      return { valid: false, error: `Minimum pembelian Rp ${voucher.minPurchase.toLocaleString('id-ID')} untuk voucher ini.` };
+    }
+
+    let discount = 0;
+    if (voucher.discountType === 'PERCENTAGE') {
+      discount = Math.floor(orderAmount * voucher.discountValue / 100);
+      if (voucher.maxDiscount && discount > voucher.maxDiscount) discount = voucher.maxDiscount;
+    } else {
+      discount = voucher.discountValue;
+    }
+    if (discount > orderAmount) discount = orderAmount;
+
+    return { valid: true, voucher, discount };
+  },
+
+  applyVoucher(code: string, orderId: string): boolean {
+    const db = ensureDatabase();
+    const voucher = db.vouchers.find(v => v.code === code.toUpperCase().trim());
+    if (!voucher) return false;
+    voucher.usedCount += 1;
+    if (!voucher.appliedOrderIds) voucher.appliedOrderIds = [];
+    voucher.appliedOrderIds.push(orderId);
+    saveDatabase(db);
+    return true;
+  },
+
+  deleteVoucher(id: string): boolean {
+    const db = ensureDatabase();
+    const len = db.vouchers.length;
+    db.vouchers = db.vouchers.filter(v => v.id !== id);
+    saveDatabase(db);
+    return db.vouchers.length < len;
+  },
+
+  toggleVoucher(id: string): Voucher | null {
+    const db = ensureDatabase();
+    const v = db.vouchers.find(x => x.id === id);
+    if (!v) return null;
+    v.isActive = !v.isActive;
+    saveDatabase(db);
+    return v;
+  },
+
+  updateOrderAmount(invoiceNumber: string, newAmount: number): boolean {
+    const db = ensureDatabase();
+    const order = db.orders.find(o => o.invoiceNumber === invoiceNumber);
+    if (!order) return false;
+    order.amount = newAmount;
+    saveDatabase(db);
+    return true;
   }
 };

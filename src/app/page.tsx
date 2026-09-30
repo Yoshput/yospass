@@ -77,7 +77,8 @@ export default function HomePage() {
     variant: ProductVariant,
     phone: string,
     email: string,
-    method: string
+    method: string,
+    voucherCode?: string
   ) => {
     try {
       setCheckoutLoading(true);
@@ -88,7 +89,8 @@ export default function HomePage() {
           variantId: variant.id,
           customerPhone: phone,
           customerEmail: email,
-          paymentMethod: method
+          paymentMethod: method,
+          voucherCode: voucherCode || undefined
         })
       });
 
