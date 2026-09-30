@@ -6,6 +6,10 @@ import Hero from '@/components/Hero';
 import ProductCard from '@/components/ProductCard';
 import ProductModal from '@/components/ProductModal';
 import PaymentModal from '@/components/PaymentModal';
+import AppMarquee from '@/components/AppMarquee';
+import BenefitSection from '@/components/BenefitSection';
+import ReviewSection from '@/components/ReviewSection';
+import ProductByBadge from '@/components/ProductByBadge';
 import { Product, ProductVariant } from '@/lib/types';
 import { ShieldCheck, Zap, RefreshCw, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -118,6 +122,9 @@ export default function HomePage() {
         categories={CATEGORIES}
       />
 
+      {/* Infinite Running App Icons Marquee */}
+      <AppMarquee />
+
       {/* Product Catalog Grid */}
       <main className="max-w-6xl mx-auto w-full px-4 pt-4 pb-16 flex-1">
         <div className="flex items-center justify-between mb-5">
@@ -187,100 +194,35 @@ export default function HomePage() {
           </motion.div>
         )}
 
-        {/* Value Proposition Section */}
-        <section
-          className={`mt-16 pt-12 border-t ${
-            isLight ? 'border-slate-200' : 'border-white/[0.08]'
-          }`}
-        >
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2
-              className={`text-2xl sm:text-3xl font-black tracking-tight ${
-                isLight ? 'text-slate-900' : 'text-white'
-              }`}
-            >
-              Standar Layanan PremiuminAja
-            </h2>
-            <p className={`text-xs sm:text-sm mt-2 ${isLight ? 'text-slate-600 font-medium' : 'text-slate-400'}`}>
-              Sistem otomatisasi penuh tanpa perantara manual, bebas antre, dan bergaransi resmi.
-            </p>
-          </div>
+        {/* Interactive Benefits & Features Section */}
+        <BenefitSection />
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div
-              className={`p-6 rounded-2xl border transition-all ${
-                isLight
-                  ? 'bg-white border-slate-200 shadow-sm'
-                  : 'glass-card border-white/[0.06]'
-              }`}
-            >
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-600 flex items-center justify-center mb-4">
-                <Zap className="w-5 h-5" />
-              </div>
-              <h3 className={`text-base font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
-                Auto-Delivery &lt; 30 Detik
-              </h3>
-              <p className={`text-xs mt-2 leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-                Begitu pembayaran QRIS terdeteksi lunas oleh webhook, kredensial akun langsung ditampilkan seketika di layar Anda.
-              </p>
-            </div>
-
-            <div
-              className={`p-6 rounded-2xl border transition-all ${
-                isLight
-                  ? 'bg-white border-slate-200 shadow-sm'
-                  : 'glass-card border-white/[0.06]'
-              }`}
-            >
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 flex items-center justify-center mb-4">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <h3 className={`text-base font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
-                Garansi Full Replacement
-              </h3>
-              <p className={`text-xs mt-2 leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-                Seluruh pesanan dilindungi jaminan garansi penuh selama masa aktif berlangganan dengan penggantian akun otomatis.
-              </p>
-            </div>
-
-            <div
-              className={`p-6 rounded-2xl border transition-all ${
-                isLight
-                  ? 'bg-white border-slate-200 shadow-sm'
-                  : 'glass-card border-white/[0.06]'
-              }`}
-            >
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-5 h-5" />
-              </div>
-              <h3 className={`text-base font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
-                Akun Resmi &amp; Legal
-              </h3>
-              <p className={`text-xs mt-2 leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-                Setiap akun didaftarkan melalui saluran resmi yang terjamin keamanannya dan stabil untuk penggunaan harian.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Customer Reviews & Social Proof */}
+        <ReviewSection />
       </main>
 
       {/* Footer */}
+      {/* Footer with Product By Badge */}
       <footer
         className={`border-t py-8 text-center text-xs safe-bottom transition-colors ${
           isLight ? 'bg-white border-slate-200 text-slate-500' : 'bg-[#050608] border-white/[0.06] text-slate-500'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© 2026 YosPass. Platform Akun Premium Otomatis &amp; Tercepat.</p>
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="font-medium">© 2026 YosPass. The Purest Gateway to Premium Apps.</p>
+
+          {/* Product by Yossika Putra Erlangga with Avatar */}
+          <ProductByBadge />
+
           <div className="flex items-center gap-4">
             <a
               href="/cek-pesanan"
-              className={`transition-colors ${isLight ? 'text-slate-600 hover:text-blue-600' : 'text-slate-400 hover:text-white'}`}
+              className={`transition-colors font-medium ${isLight ? 'text-slate-600 hover:text-blue-600' : 'text-slate-400 hover:text-white'}`}
             >
               Cek Pesanan
             </a>
-            <span className="text-emerald-500 font-bold flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Layanan Online 24/7
+            <span className="text-emerald-500 font-bold flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Layanan Online 24/7
             </span>
           </div>
         </div>
