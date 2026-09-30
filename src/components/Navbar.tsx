@@ -16,15 +16,13 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="sticky top-0 z-40 w-full px-4 pt-3 pb-2 transition-all"
+      className={`sticky top-0 z-40 w-full transition-all duration-300 backdrop-blur-xl border-b ${
+        isLight
+          ? 'bg-white/90 border-slate-200/80 shadow-sm'
+          : 'bg-[#060709]/90 border-white/[0.08] shadow-black/50'
+      }`}
     >
-      <div
-        className={`max-w-6xl mx-auto rounded-2xl px-4 py-2.5 flex items-center justify-between shadow-xl transition-all duration-300 ${
-          isLight
-            ? 'bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-slate-200/50 text-slate-900'
-            : 'glass-panel shadow-black/70 border-white/[0.08] text-white'
-        }`}
-      >
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* YosPass Brand Monogram */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-300">

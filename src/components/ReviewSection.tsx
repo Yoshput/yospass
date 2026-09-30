@@ -97,7 +97,7 @@ export default function ReviewSection() {
   const isLight = theme === 'light';
 
   return (
-    <section className="mt-16 pt-12 border-t transition-colors">
+    <section className="mt-20 pt-16 pb-20 sm:pb-28 border-t transition-colors">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">

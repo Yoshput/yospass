@@ -126,7 +126,7 @@ export default function HomePage() {
       <AppMarquee />
 
       {/* Product Catalog Grid */}
-      <main className="max-w-6xl mx-auto w-full px-4 pt-4 pb-16 flex-1">
+      <main className="max-w-6xl mx-auto w-full px-4 pt-6 pb-20 sm:pb-28 flex-1">
         <div className="flex items-center justify-between mb-5">
           <div>
             <h2
@@ -201,27 +201,30 @@ export default function HomePage() {
         <ReviewSection />
       </main>
 
-      {/* Footer */}
       {/* Footer with Product By Badge */}
       <footer
-        className={`border-t py-8 text-center text-xs safe-bottom transition-colors ${
-          isLight ? 'bg-white border-slate-200 text-slate-500' : 'bg-[#050608] border-white/[0.06] text-slate-500'
+        className={`border-t py-12 sm:py-16 text-center text-xs safe-bottom transition-colors ${
+          isLight ? 'bg-slate-50/80 border-slate-200/90 text-slate-500' : 'bg-[#040507] border-white/[0.08] text-slate-400'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-medium">© 2026 YosPass. The Purest Gateway to Premium Apps.</p>
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+          <p className="font-semibold tracking-tight text-xs">
+            © 2026 YosPass. The Purest Gateway to Premium Apps.
+          </p>
 
           {/* Product by Yossika Putra Erlangga with Avatar */}
           <ProductByBadge />
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             <a
               href="/cek-pesanan"
-              className={`transition-colors font-medium ${isLight ? 'text-slate-600 hover:text-blue-600' : 'text-slate-400 hover:text-white'}`}
+              className={`transition-colors font-semibold text-xs ${
+                isLight ? 'text-slate-600 hover:text-blue-600' : 'text-slate-300 hover:text-white'
+              }`}
             >
               Cek Pesanan
             </a>
-            <span className="text-emerald-500 font-bold flex items-center gap-1.5">
+            <span className="text-emerald-500 font-bold flex items-center gap-1.5 text-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Layanan Online 24/7
             </span>
           </div>
