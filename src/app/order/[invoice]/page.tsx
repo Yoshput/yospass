@@ -20,7 +20,8 @@ import {
   AlertTriangle,
   ArrowLeft,
   Clock,
-  RefreshCw
+  RefreshCw,
+  Info
 } from 'lucide-react';
 
 export default function OrderDetailPage() {
@@ -395,6 +396,15 @@ export default function OrderDetailPage() {
                   {account.additionalNotes}
                 </div>
               )}
+
+              {/* Platform Login Guidance */}
+              <div className={`p-4 rounded-2xl border text-xs leading-relaxed flex items-start gap-2.5 ${isLight ? 'bg-slate-50 border-slate-200 text-slate-700' : 'bg-white/[0.02] border-white/10 text-slate-300'}`}>
+                <Info className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
+                <div>
+                  <span className={`font-bold block mb-0.5 ${isLight ? 'text-slate-900' : 'text-white'}`}>Informasi Login Platform:</span>
+                  Jika platform resmi menampilkan pilihan login via link/kode, pastikan memilih opsi <span className="font-bold underline">"Masuk dengan Kata Sandi"</span>. Untuk simulasi demo tugas kuliah, kredensial di atas di-generate otomatis oleh sistem YosPass. Admin dapat memasukkan akun riil yang sudah terdaftar kapan saja melalui <span className="font-semibold text-blue-500">Vault Control Center</span>.
+                </div>
+              </div>
             </div>
 
             {/* Direct Login CTA */}
