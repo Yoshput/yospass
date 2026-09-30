@@ -5,11 +5,26 @@ import { useTheme } from './ThemeContext';
 import {
   ChatGPTLogo,
   GeminiLogo,
+  ClaudeLogo,
+  DeepSeekLogo,
+  GrokLogo,
+  PerplexityLogo,
+  CanvaLogo,
   NetflixLogo,
+  PrimeVideoLogo,
   CapCutLogo,
+  WeTVLogo,
+  IqiyiLogo,
+  BstationLogo,
+  ViuLogo,
+  CrunchyrollLogo,
+  QuillBotLogo,
+  FreepikLogo,
+  ScribdLogo,
   SpotifyLogo,
   YouTubeLogo,
-  ClaudeLogo
+  GrammarlyLogo,
+  TradingViewLogo
 } from './BrandLogos';
 
 interface MarqueeApp {
@@ -21,18 +36,38 @@ interface MarqueeApp {
 const APPS: MarqueeApp[] = [
   {
     name: 'ChatGPT Plus & Pro',
-    badge: 'OpenAI GPT-4o',
+    badge: 'GPT-5 Astra & o1 Pro',
     renderIcon: () => <ChatGPTLogo className="w-5 h-5 rounded-md" />
   },
   {
-    name: 'Gemini Advanced',
-    badge: 'Google One 2TB',
+    name: 'Claude 3.7 & Fable',
+    badge: 'Sonnet 3.5 & Artifacts',
+    renderIcon: () => <ClaudeLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'DeepSeek R1 & V3',
+    badge: '671B Chain of Thought',
+    renderIcon: () => <DeepSeekLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'xAI Grok 3 SuperGrok',
+    badge: 'Uncensored & Real-time X',
+    renderIcon: () => <GrokLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'Perplexity Pro',
+    badge: 'Claude & GPT-4o Search',
+    renderIcon: () => <PerplexityLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'Gemini Advanced 18M',
+    badge: 'Google One 2TB & 2.0 Flash',
     renderIcon: () => <GeminiLogo className="w-5 h-5 rounded-md" />
   },
   {
-    name: 'Claude 3.5 Sonnet',
-    badge: 'Anthropic AI',
-    renderIcon: () => <ClaudeLogo className="w-5 h-5 rounded-md" />
+    name: 'Canva Pro Designer',
+    badge: 'Magic Studio AI & Brand Kit',
+    renderIcon: () => <CanvaLogo className="w-5 h-5 rounded-md" />
   },
   {
     name: 'Netflix Premium 4K',
@@ -40,19 +75,74 @@ const APPS: MarqueeApp[] = [
     renderIcon: () => <NetflixLogo className="w-5 h-5 rounded-md" />
   },
   {
+    name: 'Prime Video HDR',
+    badge: 'Amazon Originals 4K',
+    renderIcon: () => <PrimeVideoLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'CapCut Pro VIP',
+    badge: 'Auto Caption & 4K 60FPS',
+    renderIcon: () => <CapCutLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'WeTV VIP',
+    badge: 'Drama Asia & Fast Track',
+    renderIcon: () => <WeTVLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'iQIYI VIP Premium',
+    badge: 'C-Drama & Anime 4K',
+    renderIcon: () => <IqiyiLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'Bstation Bilibili VIP',
+    badge: 'Anime 4K 60fps & No Ads',
+    renderIcon: () => <BstationLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'Viu Premium',
+    badge: 'Drakor Kilat 4 Jam',
+    renderIcon: () => <ViuLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'Crunchyroll Mega Fan',
+    badge: 'Simulcast Anime Jepang',
+    renderIcon: () => <CrunchyrollLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'QuillBot Premium',
+    badge: 'Paraphrase Unlimited',
+    renderIcon: () => <QuillBotLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'Freepik Premium',
+    badge: 'Vector & PSD Mockups',
+    renderIcon: () => <FreepikLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'Scribd / Everand',
+    badge: 'Jutaan Ebook & Riset',
+    renderIcon: () => <ScribdLogo className="w-5 h-5 rounded-md" />
+  },
+  {
     name: 'Spotify Premium',
-    badge: 'High-Res Audio',
+    badge: 'High-Res 320kbps Audio',
     renderIcon: () => <SpotifyLogo className="w-5 h-5 rounded-md" />
   },
   {
     name: 'YouTube Premium',
-    badge: 'No Ads & Music',
+    badge: 'No Ads & Music Offline',
     renderIcon: () => <YouTubeLogo className="w-5 h-5 rounded-md" />
   },
   {
-    name: 'CapCut Pro VIP',
-    badge: 'Auto Caption & 4K',
-    renderIcon: () => <CapCutLogo className="w-5 h-5 rounded-md" />
+    name: 'Grammarly Premium',
+    badge: 'Advanced AI Tone Rewrites',
+    renderIcon: () => <GrammarlyLogo className="w-5 h-5 rounded-md" />
+  },
+  {
+    name: 'TradingView Pro',
+    badge: 'Unlimited Chart Indicators',
+    renderIcon: () => <TradingViewLogo className="w-5 h-5 rounded-md" />
   }
 ];
 
@@ -61,7 +151,7 @@ export default function AppMarquee() {
   const isLight = theme === 'light';
 
   // Double list for infinite seamless loop
-  const duplicatedApps = [...APPS, ...APPS, ...APPS];
+  const duplicatedApps = [...APPS, ...APPS];
 
   return (
     <div className="relative w-full py-4 overflow-hidden border-y transition-colors">

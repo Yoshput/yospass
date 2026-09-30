@@ -20,7 +20,7 @@ export interface Product {
   id: string;
   slug: string;
   title: string;
-  category: 'AI & Productivity' | 'Streaming & Movies' | 'Design & Creative' | 'Music & Audio';
+  category: string;
   tagline: string;
   description: string;
   badge?: string; // e.g. "Paling Laris", "Garansi Full"

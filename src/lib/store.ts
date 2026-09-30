@@ -14,253 +14,979 @@ declare global {
 // Initial seed products with authentic brand profiles
 const INITIAL_PRODUCTS: Product[] = [
   {
-    id: 'prod-chatgpt',
-    slug: 'chatgpt-plus-pro',
-    title: 'ChatGPT Plus & Pro',
-    category: 'AI & Productivity',
-    tagline: 'Akses GPT-4o, GPT-4, DALL·E 3, Voice Mode, & Unlimited Reasoning',
-    description: 'Akun ChatGPT OpenAI resmi dengan langganan aktif Plus / Pro. Kecepatan maksimal, analisis dokumen besar, dan pembuatan gambar HD tanpa antre.',
-    badge: 'Paling Populer',
-    icon: 'OpenAI',
-    loginUrl: 'https://chatgpt.com/auth/login',
-    variants: [
+    "id": "prod-chatgpt",
+    "slug": "chatgpt-plus-pro",
+    "title": "ChatGPT Plus & Pro (GPT-5 Astra & o1)",
+    "category": "AI & Flagship Models",
+    "tagline": "Akses Flagship OpenAI o1, o1-pro, o3-mini, GPT-4o, & GPT-5 Astra Preview",
+    "description": "Akun ChatGPT OpenAI resmi dengan langganan aktif Plus / Pro. Dilengkapi model reasoning mendalam, pembuatan gambar DALL·E 3 HD, dan Advanced Voice Mode interaktif.",
+    "badge": "Paling Populer",
+    "icon": "ChatGPT",
+    "loginUrl": "https://chatgpt.com/auth/login",
+    "variants": [
       {
-        id: 'var-cgpt-sharing-1m',
-        productId: 'prod-chatgpt',
-        name: '1 Bulan Sharing (1 Profil + PIN)',
-        accountType: 'SHARING',
-        durationMonths: 1,
-        price: 45000,
-        originalPrice: 85000,
-        features: ['1 Pengguna (1 Device)', 'Profil Khusus dengan PIN 4 Digit', 'Akses GPT-4o & DALL·E 3', 'Garansi Penuh 30 Hari']
+        "id": "var-cgpt-sharing-1m",
+        "productId": "prod-chatgpt",
+        "name": "1 Bulan Sharing (1 Profil + PIN)",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 45000,
+        "originalPrice": 85000,
+        "features": [
+          "1 Pengguna (1 Device)",
+          "Profil Khusus dengan PIN 4 Digit",
+          "Akses GPT-4o, o1, & DALL·E 3",
+          "Garansi Penuh 30 Hari"
+        ]
       },
       {
-        id: 'var-cgpt-private-1m',
-        productId: 'prod-chatgpt',
-        name: '1 Bulan Private Full Account',
-        accountType: 'PRIVATE',
-        durationMonths: 1,
-        price: 185000,
-        originalPrice: 350000,
-        features: ['Full Akun Pribadi (Bebas Ganti Password)', 'Akses Email Utama', 'Tanpa Batasan Sharing', 'Garansi Penuh 30 Hari']
+        "id": "var-cgpt-private-1m",
+        "productId": "prod-chatgpt",
+        "name": "1 Bulan Private Full Account",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 185000,
+        "originalPrice": 350000,
+        "features": [
+          "Full Akun Pribadi (Bebas Ganti Password)",
+          "Akses Email Utama",
+          "Tanpa Batasan Sharing",
+          "Garansi Penuh 30 Hari"
+        ]
       },
       {
-        id: 'var-cgpt-pro-1m',
-        productId: 'prod-chatgpt',
-        name: 'ChatGPT Pro $200 (Unlimited)',
-        accountType: 'PRIVATE',
-        durationMonths: 1,
-        price: 490000,
-        originalPrice: 3200000,
-        features: ['Akses Model o1 Pro Tanpa Limit', 'Daya Nalar Tingkat Tinggi', 'Prioritas Compute Tertinggi', 'Garansi 30 Hari']
+        "id": "var-cgpt-pro-1m",
+        "productId": "prod-chatgpt",
+        "name": "ChatGPT Pro $200 (Unlimited o1 Pro)",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 490000,
+        "originalPrice": 3200000,
+        "features": [
+          "Akses Model o1 Pro Tanpa Limit",
+          "Daya Nalar Tingkat Tinggi",
+          "Prioritas Compute Tertinggi",
+          "Garansi 30 Hari"
+        ]
       }
     ]
   },
   {
-    id: 'prod-gemini',
-    slug: 'gemini-advanced-pro',
-    title: 'Gemini Advanced 18 Bulan',
-    category: 'AI & Productivity',
-    tagline: 'Google One AI Premium 2TB Storage & Gemini 1.5 Pro 1M Context',
-    description: 'Langganan Google AI Premium dengan integrasi langsung di Docs, Gmail, Drive, serta jendela konteks 1–2 juta token untuk analisis video dan repositori kode besar.',
-    badge: 'Durasi Terpanjang',
-    icon: 'Gemini',
-    loginUrl: 'https://gemini.google.com',
-    variants: [
+    "id": "prod-claude",
+    "slug": "claude-pro",
+    "title": "Claude 3.7 & 3.5 Sonnet Pro",
+    "category": "AI & Flagship Models",
+    "tagline": "Anthropic Claude 3.7 Sonnet (Hybrid Thinking), Artifacts, & Claude Fable Canvas",
+    "description": "Akses model kecerdasan coding & penalaran nomor 1 di dunia. Fitur Artifacts interaktif, jendela konteks 200k token, dan akses prioritas tinggi tanpa antre.",
+    "badge": "Rekomendasi Coder",
+    "icon": "Claude",
+    "loginUrl": "https://claude.ai/login",
+    "variants": [
       {
-        id: 'var-gemini-18m-edu',
-        productId: 'prod-gemini',
-        name: 'Paket Spesial 18 Bulan (Google One AI 2TB)',
-        accountType: 'PRIVATE',
-        durationMonths: 18,
-        price: 125000,
-        originalPrice: 1450000,
-        features: ['Aktif 18 Bulan Penuh', 'Cloud Storage Google Drive 2TB', 'Gemini 1.5 Pro Context 1M Token', 'Akun Fresh & Bebas Pakai']
+        "id": "var-claude-sharing-1m",
+        "productId": "prod-claude",
+        "name": "1 Bulan Sharing VIP (Sonnet 3.5 & 3.7)",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 55000,
+        "originalPrice": 120000,
+        "features": [
+          "Akses Model Claude 3.5 & 3.7 Sonnet",
+          "Fitur Artifacts & Fable Terbuka",
+          "Garansi Penuh 30 Hari"
+        ]
       },
       {
-        id: 'var-gemini-1m-fresh',
-        productId: 'prod-gemini',
-        name: '1 Bulan Private Akun Baru',
-        accountType: 'PRIVATE',
-        durationMonths: 1,
-        price: 25000,
-        originalPrice: 50000,
-        features: ['1 Bulan Penuh', 'Akses Semua Fitur Gemini Advanced', 'Garansi Penuh']
+        "id": "var-claude-private-1m",
+        "productId": "prod-claude",
+        "name": "1 Bulan Private Akun",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 195000,
+        "originalPrice": 380000,
+        "features": [
+          "Akun Full Milik Sendiri",
+          "Bebas Ganti Password & Email",
+          "Garansi Penuh 30 Hari"
+        ]
+      },
+      {
+        "id": "var-claude-team-1m",
+        "productId": "prod-claude",
+        "name": "1 Bulan Claude Team Pro (High Token)",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 340000,
+        "originalPrice": 650000,
+        "features": [
+          "Kapasitas Token Tertinggi",
+          "Akses Semua Model Claude",
+          "Garansi Penuh 30 Hari"
+        ]
       }
     ]
   },
   {
-    id: 'prod-netflix',
-    slug: 'netflix-premium-4k',
-    title: 'Netflix Premium 4K UHD',
-    category: 'Streaming & Movies',
-    tagline: 'Nonton Bioskop 4K Ultra HD & Spatial Audio Tanpa Iklan',
-    description: 'Akun resmi Netflix Plan Premium Ultra HD. Menjamin streaming lancar tanpa masalah screen limit atau household lock.',
-    badge: 'Best Seller Streaming',
-    icon: 'Netflix',
-    loginUrl: 'https://netflix.com/login',
-    variants: [
+    "id": "prod-deepseek",
+    "slug": "deepseek-r1-pro",
+    "title": "DeepSeek R1 & V3 Pro (Unlimited)",
+    "category": "AI & Flagship Models",
+    "tagline": "AI Penalaran No. 1 Dunia (671B Params Chain of Thought) Tanpa Server Busy",
+    "description": "Akses DeepSeek-R1 Full Model dan DeepSeek-V3 ultra-fast inference tanpa batasan server busy. Solusi penalaran matematika, logika, dan coding tingkat tinggi.",
+    "badge": "Trending 2026",
+    "icon": "DeepSeek",
+    "loginUrl": "https://chat.deepseek.com",
+    "variants": [
       {
-        id: 'var-nflx-sharing-1m',
-        productId: 'prod-netflix',
-        name: '1 Bulan Sharing (1 Profil + PIN)',
-        accountType: 'SHARING',
-        durationMonths: 1,
-        price: 28000,
-        originalPrice: 65000,
-        features: ['1 Device Streaming Bersamaan', 'Kualitas 4K Ultra HD + HDR', 'Anti Screen Limit (1 Orang 1 Profil)', 'Garansi 30 Hari']
+        "id": "var-deepseek-vip-1m",
+        "productId": "prod-deepseek",
+        "name": "1 Bulan VIP Priority Server",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 35000,
+        "originalPrice": 75000,
+        "features": [
+          "Bebas Antre & Tanpa Server Busy",
+          "Model R1 671B Chain of Thought",
+          "Fitur Web Search Real-Time",
+          "Garansi 30 Hari"
+        ]
       },
       {
-        id: 'var-nflx-private-1m',
-        productId: 'prod-netflix',
-        name: '1 Bulan Private (5 Profil Bebas)',
-        accountType: 'PRIVATE',
-        durationMonths: 1,
-        price: 135000,
-        originalPrice: 186000,
-        features: ['Bebas 5 Profil untuk Keluarga/Teman', 'Dapat Digunakan di 4 Layar Sekaligus', 'Bisa Ganti PIN & Password', 'Garansi 30 Hari']
-      },
-      {
-        id: 'var-nflx-sharing-3m',
-        productId: 'prod-netflix',
-        name: '3 Bulan Sharing Hemat',
-        accountType: 'SHARING',
-        durationMonths: 3,
-        price: 75000,
-        originalPrice: 195000,
-        features: ['Aktif 90 Hari Penuh', 'Kualitas 4K UHD', 'Garansi Perpanjangan Instan']
+        "id": "var-deepseek-key-3m",
+        "productId": "prod-deepseek",
+        "name": "3 Bulan Hemat Dedicated Access",
+        "accountType": "PRIVATE",
+        "durationMonths": 3,
+        "price": 85000,
+        "originalPrice": 195000,
+        "features": [
+          "Aktif 90 Hari Penuh",
+          "Akses Prioritas Dedikasi",
+          "Garansi Penggantian"
+        ]
       }
     ]
   },
   {
-    id: 'prod-capcut',
-    slug: 'capcut-pro',
-    title: 'CapCut Pro Desktop & Mobile',
-    category: 'Design & Creative',
-    tagline: 'Buka Semua Filter VIP, AI Auto-Caption, & 4K 60FPS Export',
-    description: 'Paket editing video favorit konten kreator TikTok, Reels, dan YouTube Shorts dengan efek AI dan template pro tanpa watermark.',
-    badge: 'Favorit Kreator',
-    icon: 'CapCut',
-    loginUrl: 'https://www.capcut.com/login',
-    variants: [
+    "id": "prod-grok",
+    "slug": "grok-3-supergrok",
+    "title": "xAI Grok 3 SuperGrok Pro",
+    "category": "AI & Flagship Models",
+    "tagline": "SuperGrok Uncensored Fun Mode, Real-Time X/Twitter Intel, & Flux 1 Generator",
+    "description": "Model AI revolusioner dari Elon Musk xAI. Terkoneksi secara real-time dengan data X (Twitter), fitur tanpa sensor (Fun Mode), dan visual image generation Flux 1.",
+    "badge": "Uncensored AI",
+    "icon": "Grok",
+    "loginUrl": "https://grok.x.ai",
+    "variants": [
       {
-        id: 'var-capcut-sharing-1m',
-        productId: 'prod-capcut',
-        name: '1 Bulan Sharing VIP',
-        accountType: 'SHARING',
-        durationMonths: 1,
-        price: 18000,
-        originalPrice: 49000,
-        features: ['Bisa Login di HP / Laptop (Windows & Mac)', 'Semua Efek & Filter VIP Terbuka', 'Ekspor Video 4K 60fps', 'Garansi 30 Hari']
+        "id": "var-grok-sharing-1m",
+        "productId": "prod-grok",
+        "name": "1 Bulan Sharing VIP (Profil PIN)",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 45000,
+        "originalPrice": 95000,
+        "features": [
+          "Akses Grok 2 & Grok 3",
+          "Mode Uncensored / Fun Mode Aktif",
+          "Generate Gambar Flux 1 Unlimited",
+          "Garansi 30 Hari"
+        ]
       },
       {
-        id: 'var-capcut-private-1y',
-        productId: 'prod-capcut',
-        name: '1 Tahun Private VIP',
-        accountType: 'PRIVATE',
-        durationMonths: 12,
-        price: 120000,
-        originalPrice: 350000,
-        features: ['Aktif 1 Tahun Penuh', 'Akun Milik Sendiri', 'Garansi Penggantian Cepat']
+        "id": "var-grok-private-1m",
+        "productId": "prod-grok",
+        "name": "1 Bulan Private X Premium+",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 165000,
+        "originalPrice": 350000,
+        "features": [
+          "Akun X Premium+ Full Sendiri",
+          "Bebas Iklan di Timeline X",
+          "Garansi 30 Hari Penuh"
+        ]
       }
     ]
   },
   {
-    id: 'prod-spotify',
-    slug: 'spotify-premium',
-    title: 'Spotify Premium Individual',
-    category: 'Music & Audio',
-    tagline: 'Dengarkan Musik Bebas Iklan, Download Offline, & Kualitas Suara High',
-    description: 'Nikmati streaming jutaan lagu tanpa jeda iklan, bebas skip lagu tanpa batas, dan download lagu untuk didengarkan offline.',
-    badge: 'Bebas Iklan',
-    icon: 'Spotify',
-    loginUrl: 'https://accounts.spotify.com/login',
-    variants: [
+    "id": "prod-perplexity",
+    "slug": "perplexity-pro",
+    "title": "Perplexity Pro (Search AI All-in-One)",
+    "category": "AI & Flagship Models",
+    "tagline": "Satu Langganan untuk Semua AI: Claude 3.5, GPT-4o, Sonar Large, & $5 API Credit",
+    "description": "Mesin pencari berbasis AI tercanggih di dunia. Bebas memilih engine Claude 3.5 Sonnet, GPT-4o, atau Sonar. Menyertakan sitasi ilmiah, upload PDF, dan kredit API bulanan.",
+    "badge": "Favorit Peneliti",
+    "icon": "Perplexity",
+    "loginUrl": "https://www.perplexity.ai",
+    "variants": [
       {
-        id: 'var-spot-fresh-1m',
-        productId: 'prod-spotify',
-        name: '1 Bulan Akun Fresh',
-        accountType: 'PRIVATE',
-        durationMonths: 1,
-        price: 15000,
-        originalPrice: 55000,
-        features: ['Bebas Iklan Selamanya', 'Kualitas Audio Sangat Tinggi (320kbps)', 'Download Lagu Offline', 'Garansi 30 Hari']
+        "id": "var-perp-priv-1m",
+        "productId": "prod-perplexity",
+        "name": "1 Bulan Private Akun Baru",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 65000,
+        "originalPrice": 150000,
+        "features": [
+          "Pro Search Tanpa Batas (300+/hari)",
+          "Pilih Model AI Sesuka Hati",
+          "Garansi Penuh 30 Hari"
+        ]
       },
       {
-        id: 'var-spot-3m',
-        productId: 'prod-spotify',
-        name: '3 Bulan Hemat',
-        accountType: 'PRIVATE',
-        durationMonths: 3,
-        price: 38000,
-        originalPrice: 165000,
-        features: ['Aktif 90 Hari', 'Garansi Ganti Akun Jika Terjadi Drop']
+        "id": "var-perp-edu-1y",
+        "productId": "prod-perplexity",
+        "name": "1 Tahun Promo Mahasiswa",
+        "accountType": "PRIVATE",
+        "durationMonths": 12,
+        "price": 290000,
+        "originalPrice": 1450000,
+        "features": [
+          "Aktif 1 Tahun Penuh",
+          "Kredit API $5/Bulan",
+          "Garansi Resmi 365 Hari"
+        ]
       }
     ]
   },
   {
-    id: 'prod-youtube',
-    slug: 'youtube-premium',
-    title: 'YouTube Premium & Music',
-    category: 'Streaming & Movies',
-    tagline: 'Bebas Iklan di TV, HP, & Laptop + YouTube Music Full Akses',
-    description: 'Putar video di latar belakang (background play) saat layar HP mati, bebas iklan di smart TV, dan akses penuh ke YouTube Music.',
-    badge: 'Tanpa Iklan',
-    icon: 'YouTube',
-    loginUrl: 'https://accounts.google.com',
-    variants: [
+    "id": "prod-gemini",
+    "slug": "gemini-advanced-pro",
+    "title": "Gemini Advanced 18 Bulan",
+    "category": "AI & Flagship Models",
+    "tagline": "Google One AI Premium 2TB Storage & Gemini 2.0 Flash Thinking 1M Context",
+    "description": "Langganan resmi Google AI Premium aktif 18 bulan penuh. Mendapatkan kapasitas cloud Google Drive 2TB, Gemini 1.5/2.0 Pro terintegrasi langsung di Gmail dan Docs.",
+    "badge": "Durasi Terpanjang",
+    "icon": "Gemini",
+    "loginUrl": "https://gemini.google.com",
+    "variants": [
       {
-        id: 'var-yt-fresh-1m',
-        productId: 'prod-youtube',
-        name: '1 Bulan Family Invite',
-        accountType: 'SHARING',
-        durationMonths: 1,
-        price: 12000,
-        originalPrice: 49000,
-        features: ['Masuk ke Email Pribadi Kamu', 'Bebas Iklan di Semua Perangkat', 'Termasuk YouTube Music', 'Garansi 30 Hari']
+        "id": "var-gemini-18m-edu",
+        "productId": "prod-gemini",
+        "name": "Paket Spesial 18 Bulan (Google One AI 2TB)",
+        "accountType": "PRIVATE",
+        "durationMonths": 18,
+        "price": 125000,
+        "originalPrice": 1450000,
+        "features": [
+          "Aktif 18 Bulan Penuh",
+          "Cloud Storage Google Drive 2TB",
+          "Gemini 1.5 Pro Context 1M Token",
+          "Akun Fresh & Bebas Pakai"
+        ]
       },
       {
-        id: 'var-yt-fresh-3m',
-        productId: 'prod-youtube',
-        name: '3 Bulan Akun Fresh',
-        accountType: 'PRIVATE',
-        durationMonths: 3,
-        price: 32000,
-        originalPrice: 147000,
-        features: ['Email & Password Baru', 'Aktif 3 Bulan Penuh', 'Garansi Full']
+        "id": "var-gemini-1m-fresh",
+        "productId": "prod-gemini",
+        "name": "1 Bulan Private Akun Baru",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 25000,
+        "originalPrice": 50000,
+        "features": [
+          "1 Bulan Penuh",
+          "Akses Semua Fitur Gemini Advanced",
+          "Garansi Penuh"
+        ]
       }
     ]
   },
   {
-    id: 'prod-claude',
-    slug: 'claude-pro',
-    title: 'Claude 3.5 Sonnet Pro',
-    category: 'AI & Productivity',
-    tagline: 'Model AI Coding & Writing No. 1 dengan Fitur Artifacts Interaktif',
-    description: 'Akses Claude 3.5 Sonnet & Claude 3 Opus resmi Anthropic. Kapasitas 5x lipat lebih banyak, akses prioritas di jam sibuk, dan kemampuan coding canggih.',
-    badge: 'Rekomendasi Coder',
-    icon: 'Claude',
-    loginUrl: 'https://claude.ai/login',
-    variants: [
+    "id": "prod-canva",
+    "slug": "canva-pro",
+    "title": "Canva Pro Designer",
+    "category": "Desain & Kreatif",
+    "tagline": "Buka 100+ Juta Template Premium, Magic Studio AI, Brand Kit, & Cloud 1TB",
+    "description": "Paket Canva Pro resmi untuk mahasiswa, desainer, dan bisnis online. Bebas download resolusi transparan, hapus background 1 klik, dan gunakan semua elemen VIP.",
+    "badge": "Wajib Mahasiswa",
+    "icon": "Canva",
+    "loginUrl": "https://www.canva.com/login",
+    "variants": [
       {
-        id: 'var-claude-sharing-1m',
-        productId: 'prod-claude',
-        name: '1 Bulan Sharing VIP',
-        accountType: 'SHARING',
-        durationMonths: 1,
-        price: 55000,
-        originalPrice: 120000,
-        features: ['Akses Model Claude 3.5 Sonnet', 'Fitur Artifacts Terbuka', 'Garansi Penuh 30 Hari']
+        "id": "var-canva-invite-1m",
+        "productId": "prod-canva",
+        "name": "1 Bulan Invite Member Pro (Email Sendiri)",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 12000,
+        "originalPrice": 35000,
+        "features": [
+          "Masuk ke Email Pribadi Anda",
+          "Buka Semua Elemen & Template VIP",
+          "Magic Studio AI Generator",
+          "Garansi 30 Hari"
+        ]
       },
       {
-        id: 'var-claude-private-1m',
-        productId: 'prod-claude',
-        name: '1 Bulan Private Akun',
-        accountType: 'PRIVATE',
-        durationMonths: 1,
-        price: 195000,
-        originalPrice: 380000,
-        features: ['Akun Full Milik Sendiri', 'Bebas Ganti Password & Email', 'Garansi Penuh 30 Hari']
+        "id": "var-canva-edu-1y",
+        "productId": "prod-canva",
+        "name": "1 Tahun Edu / Designer Pro",
+        "accountType": "PRIVATE",
+        "durationMonths": 12,
+        "price": 35000,
+        "originalPrice": 180000,
+        "features": [
+          "Aktif 1 Tahun Penuh",
+          "Bebas Hapus Background & Resize",
+          "Garansi 1 Tahun"
+        ]
+      },
+      {
+        "id": "var-canva-team-1y",
+        "productId": "prod-canva",
+        "name": "1 Tahun Private Admin Team (Bisa Invite 5 Teman)",
+        "accountType": "PRIVATE",
+        "durationMonths": 12,
+        "price": 95000,
+        "originalPrice": 450000,
+        "features": [
+          "Akses Brand Kit & Font Kustom",
+          "Bisa Tambah 5 Akun Anggota",
+          "Garansi Penuh 1 Tahun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-capcut",
+    "slug": "capcut-pro",
+    "title": "CapCut Pro Desktop & Mobile",
+    "category": "Desain & Kreatif",
+    "tagline": "Buka Semua Filter VIP, AI Auto-Caption, & Ekspor Video 4K 60FPS",
+    "description": "Aplikasi editing video paling diminati untuk TikTok, Reels, dan YouTube Shorts. Semua efek AI, template pro, dan audio tanpa watermark.",
+    "badge": "Favorit Kreator",
+    "icon": "CapCut",
+    "loginUrl": "https://www.capcut.com/login",
+    "variants": [
+      {
+        "id": "var-capcut-sharing-1m",
+        "productId": "prod-capcut",
+        "name": "1 Bulan Sharing VIP",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 18000,
+        "originalPrice": 49000,
+        "features": [
+          "Bisa Login di HP / Laptop (Windows & Mac)",
+          "Semua Efek & Filter VIP Terbuka",
+          "Ekspor Video 4K 60fps",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-capcut-private-1y",
+        "productId": "prod-capcut",
+        "name": "1 Tahun Private VIP",
+        "accountType": "PRIVATE",
+        "durationMonths": 12,
+        "price": 120000,
+        "originalPrice": 350000,
+        "features": [
+          "Aktif 1 Tahun Penuh",
+          "Akun Milik Sendiri",
+          "Garansi Penggantian Cepat"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-freepik",
+    "slug": "freepik-premium",
+    "title": "Freepik Premium & AI Mockup",
+    "category": "Desain & Kreatif",
+    "tagline": "Download Ribuan Aset Desain Vektor, PSD, & Lisensi Komersial Bebas Pakai",
+    "description": "Gudang aset desain grafis terbesar di dunia. Akses tanpa batas ke jutaan file vector, foto kualitas tinggi, PSD mockup, serta fitur AI Image Generator Freepik.",
+    "badge": "Pilihan Desainer",
+    "icon": "Freepik",
+    "loginUrl": "https://www.freepik.com",
+    "variants": [
+      {
+        "id": "var-freepik-share-1m",
+        "productId": "prod-freepik",
+        "name": "1 Bulan Sharing Download Harian",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 35000,
+        "originalPrice": 85000,
+        "features": [
+          "Download File Premium Setiap Hari",
+          "Format Vektor AI, EPS, & PSD Mockup",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-freepik-priv-1m",
+        "productId": "prod-freepik",
+        "name": "1 Bulan Private Account",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 120000,
+        "originalPrice": 250000,
+        "features": [
+          "Akun Pribadi Bebas Akses Penuh",
+          "Lisensi Komersial Lengkap",
+          "Garansi 30 Hari"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-netflix",
+    "slug": "netflix-premium-4k",
+    "title": "Netflix Premium 4K UHD",
+    "category": "Streaming & Film",
+    "tagline": "Nonton Bioskop 4K Ultra HD & Spatial Audio Tanpa Iklan",
+    "description": "Akun resmi Netflix Plan Premium Ultra HD. Menjamin streaming lancar tanpa masalah screen limit atau household lock.",
+    "badge": "Best Seller Streaming",
+    "icon": "Netflix",
+    "loginUrl": "https://netflix.com/login",
+    "variants": [
+      {
+        "id": "var-nflx-sharing-1m",
+        "productId": "prod-netflix",
+        "name": "1 Bulan Sharing (1 Profil + PIN)",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 28000,
+        "originalPrice": 65000,
+        "features": [
+          "1 Device Streaming Bersamaan",
+          "Kualitas 4K Ultra HD + HDR",
+          "Anti Screen Limit (1 Orang 1 Profil)",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-nflx-private-1m",
+        "productId": "prod-netflix",
+        "name": "1 Bulan Private (5 Profil Bebas)",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 135000,
+        "originalPrice": 186000,
+        "features": [
+          "Bebas 5 Profil untuk Keluarga/Teman",
+          "Dapat Digunakan di 4 Layar Sekaligus",
+          "Bisa Ganti PIN & Password",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-nflx-sharing-3m",
+        "productId": "prod-netflix",
+        "name": "3 Bulan Sharing Hemat",
+        "accountType": "SHARING",
+        "durationMonths": 3,
+        "price": 75000,
+        "originalPrice": 195000,
+        "features": [
+          "Aktif 90 Hari Penuh",
+          "Kualitas 4K UHD",
+          "Garansi Perpanjangan Instan"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-prime",
+    "slug": "prime-video-4k",
+    "title": "Amazon Prime Video 4K",
+    "category": "Streaming & Film",
+    "tagline": "Nonton The Boys, Rings of Power, & Film Box Office 4K UHD + HDR10",
+    "description": "Layanan streaming premium dari Amazon. Menikmati ratusan film box office original kualitas 4K HDR dengan audio Dolby Atmos.",
+    "badge": "Resolusi 4K HDR",
+    "icon": "PrimeVideo",
+    "loginUrl": "https://www.primevideo.com",
+    "variants": [
+      {
+        "id": "var-prime-share-1m",
+        "productId": "prod-prime",
+        "name": "1 Bulan Sharing (1 Profil + PIN)",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 19000,
+        "originalPrice": 45000,
+        "features": [
+          "Nonton Kualitas 4K UHD + HDR",
+          "1 Device Aktif Bersamaan",
+          "Garansi Penuh 30 Hari"
+        ]
+      },
+      {
+        "id": "var-prime-priv-1m",
+        "productId": "prod-prime",
+        "name": "1 Bulan Private Full Account",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 59000,
+        "originalPrice": 99000,
+        "features": [
+          "Bebas Bikin Banyak Profil",
+          "Nonton di 3 Layar Sekaligus",
+          "Garansi 30 Hari"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-wetv",
+    "slug": "wetv-vip",
+    "title": "WeTV VIP Asia",
+    "category": "Streaming & Film",
+    "tagline": "Nonton Episode Baru Lebih Cepat (Fast Track), Full HD 1080p Tanpa Iklan",
+    "description": "Platform nomor 1 untuk drama China, drama Asia, dan variety show Chuang. Buka episode VIP lebih awal tanpa jeda iklan.",
+    "badge": "Raja Drachin",
+    "icon": "WeTV",
+    "loginUrl": "https://wetv.vip",
+    "variants": [
+      {
+        "id": "var-wetv-share-1m",
+        "productId": "prod-wetv",
+        "name": "1 Bulan Sharing VIP",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 15000,
+        "originalPrice": 39000,
+        "features": [
+          "Nonton Tanpa Iklan",
+          "Kualitas Full HD 1080p",
+          "Akses Fitur Fast Track",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-wetv-share-3m",
+        "productId": "prod-wetv",
+        "name": "3 Bulan Hemat VIP",
+        "accountType": "SHARING",
+        "durationMonths": 3,
+        "price": 38000,
+        "originalPrice": 99000,
+        "features": [
+          "Aktif 90 Hari Penuh",
+          "Drakor & Drachin Eksklusif",
+          "Garansi Full"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-iqiyi",
+    "slug": "iqiyi-vip",
+    "title": "iQIYI VIP Premium",
+    "category": "Streaming & Film",
+    "tagline": "Streaming Drama Mandarin & Anime Populer Kualitas 4K Dolby Atmos",
+    "description": "Tonton drama romantis Asia, anime simulcast, dan reality show orisinal iQIYI dengan subtitle bahasa Indonesia berkualitas tinggi.",
+    "badge": "Anime & C-Drama",
+    "icon": "iQIYI",
+    "loginUrl": "https://www.iq.com",
+    "variants": [
+      {
+        "id": "var-iqiyi-share-1m",
+        "productId": "prod-iqiyi",
+        "name": "1 Bulan Standard Sharing",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 16000,
+        "originalPrice": 39000,
+        "features": [
+          "Kualitas Gambar 1080p/4K",
+          "Subtitle Bahasa Indonesia",
+          "Download Offline",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-iqiyi-priv-1m",
+        "productId": "prod-iqiyi",
+        "name": "1 Bulan Premium 4 Screen Private",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 39000,
+        "originalPrice": 89000,
+        "features": [
+          "Audio Dolby Atmos",
+          "Bisa Nonton di 4 Device",
+          "Garansi Penuh 30 Hari"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-bstation",
+    "slug": "bstation-bilibili-vip",
+    "title": "Bstation / Bilibili VIP",
+    "category": "Streaming & Film",
+    "tagline": "Nonton Anime Kualitas 4K 60fps & Bebas Akses Komik Premium Tanpa Sensor",
+    "description": "Surganya pecinta anime dan animasi Jepang. Tonton episode terbaru anime populer tanpa potongan, resolusi 4K 60fps, dan download sepuasnya.",
+    "badge": "Anime 4K 60FPS",
+    "icon": "Bstation",
+    "loginUrl": "https://www.bilibili.tv",
+    "variants": [
+      {
+        "id": "var-bstation-share-1m",
+        "productId": "prod-bstation",
+        "name": "1 Bulan Sharing VIP",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 14000,
+        "originalPrice": 35000,
+        "features": [
+          "Resolusi 4K 60FPS & Dolby",
+          "Semua Anime VIP Terbuka",
+          "Download Tanpa Batas",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-bstation-share-3m",
+        "productId": "prod-bstation",
+        "name": "3 Bulan Hemat VIP",
+        "accountType": "SHARING",
+        "durationMonths": 3,
+        "price": 35000,
+        "originalPrice": 89000,
+        "features": [
+          "Aktif 90 Hari Penuh",
+          "Koleksi Manga & Anime VIP",
+          "Garansi Full"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-viu",
+    "slug": "viu-premium",
+    "title": "Viu Premium",
+    "category": "Streaming & Film",
+    "tagline": "Download Offline & Nonton Drama Korea Tayang Barengan Korea Sub Indo",
+    "description": "Pusat drakor terlengkap dengan subtitle Indonesia tercepat (4-8 jam setelah penayangan di Korea Selatan). Bebas iklan di Smart TV dan HP.",
+    "badge": "Drakor Kilat",
+    "icon": "Viu",
+    "loginUrl": "https://www.viu.com",
+    "variants": [
+      {
+        "id": "var-viu-priv-1m",
+        "productId": "prod-viu",
+        "name": "1 Bulan Private Akun Fresh",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 15000,
+        "originalPrice": 39000,
+        "features": [
+          "Subtitle Indonesia Tercepat",
+          "Bebas Iklan di TV & HP",
+          "Download Tayangan Offline",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-viu-priv-6m",
+        "productId": "prod-viu",
+        "name": "6 Bulan Paket Hemat",
+        "accountType": "PRIVATE",
+        "durationMonths": 6,
+        "price": 45000,
+        "originalPrice": 120000,
+        "features": [
+          "Aktif 180 Hari Penuh",
+          "Full Akun Pribadi",
+          "Garansi 6 Bulan"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-crunchyroll",
+    "slug": "crunchyroll-mega-fan",
+    "title": "Crunchyroll Mega Fan",
+    "category": "Streaming & Film",
+    "tagline": "Nonton Anime 1 Jam Setelah Tayang di Jepang, Download Offline & 4 Layar",
+    "description": "Platform anime resmi terbesar di dunia. Akses simulcast legal Attack on Titan, Jujutsu Kaisen, Demon Slayer, One Piece langsung dari Jepang.",
+    "badge": "Simulcast Jepang",
+    "icon": "Crunchyroll",
+    "loginUrl": "https://www.crunchyroll.com",
+    "variants": [
+      {
+        "id": "var-crunchy-share-1m",
+        "productId": "prod-crunchyroll",
+        "name": "1 Bulan Mega Fan Sharing",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 18000,
+        "originalPrice": 45000,
+        "features": [
+          "Simulcast 1 Jam Pasca Jepang",
+          "Bebas Iklan Resolusi 1080p",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-crunchy-priv-1m",
+        "productId": "prod-crunchyroll",
+        "name": "1 Bulan Mega Fan Private (4 Layar)",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 49000,
+        "originalPrice": 99000,
+        "features": [
+          "Streaming di 4 Layar Sekaligus",
+          "Download Offline di Aplikasi",
+          "Garansi Penuh 30 Hari"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-youtube",
+    "slug": "youtube-premium",
+    "title": "YouTube Premium & Music",
+    "category": "Streaming & Film",
+    "tagline": "Bebas Iklan di TV, HP, & Laptop + YouTube Music Full Akses",
+    "description": "Putar video di latar belakang (background play) saat layar HP mati, bebas iklan di smart TV, dan akses penuh ke YouTube Music.",
+    "badge": "Tanpa Iklan",
+    "icon": "YouTube",
+    "loginUrl": "https://accounts.google.com",
+    "variants": [
+      {
+        "id": "var-yt-fresh-1m",
+        "productId": "prod-youtube",
+        "name": "1 Bulan Family Invite",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 12000,
+        "originalPrice": 49000,
+        "features": [
+          "Masuk ke Email Pribadi Kamu",
+          "Bebas Iklan di Semua Perangkat",
+          "Termasuk YouTube Music",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-yt-fresh-3m",
+        "productId": "prod-youtube",
+        "name": "3 Bulan Akun Fresh",
+        "accountType": "PRIVATE",
+        "durationMonths": 3,
+        "price": 32000,
+        "originalPrice": 147000,
+        "features": [
+          "Email & Password Baru",
+          "Aktif 3 Bulan Penuh",
+          "Garansi Full"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-quillbot",
+    "slug": "quillbot-premium",
+    "title": "QuillBot Premium",
+    "category": "Edukasi & Produktivitas",
+    "tagline": "Paraphrase Unlimited Kata, Grammar Checker, & Anti Plagiarism Detektor",
+    "description": "Sahabat setia mahasiswa dan akademisi. Mengubah kalimat skripsi dan artikel menjadi lebih ilmiah, tanpa batasan kata, dan bebas plagiarisme.",
+    "badge": "Sahabat Skripsi",
+    "icon": "QuillBot",
+    "loginUrl": "https://quillbot.com",
+    "variants": [
+      {
+        "id": "var-quill-share-1m",
+        "productId": "prod-quillbot",
+        "name": "1 Bulan Sharing VIP",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 25000,
+        "originalPrice": 60000,
+        "features": [
+          "Paraphraser Tanpa Batas Kata",
+          "Semua Mode Penulisan Terbuka",
+          "Pengecekan Plagiarisme",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-quill-priv-1m",
+        "productId": "prod-quillbot",
+        "name": "1 Bulan Private Full Account",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 75000,
+        "originalPrice": 180000,
+        "features": [
+          "Akun Pribadi Milik Sendiri",
+          "Integrasi Chrome & MS Word",
+          "Garansi Penuh 30 Hari"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-scribd",
+    "slug": "scribd-everand",
+    "title": "Scribd / Everand Unlimited",
+    "category": "Edukasi & Produktivitas",
+    "tagline": "Buka Dokumen Skripsi, Jurnal Internasional, Ebook, & Audiobook Tanpa Batas",
+    "description": "Perpustakaan digital raksasa berisi jutaan buku bestseller, audiobook, presentasi, makalah, dan jurnal ilmiah untuk referensi tugas akhir.",
+    "badge": "Jutaan Buku",
+    "icon": "Scribd",
+    "loginUrl": "https://www.scribd.com/login",
+    "variants": [
+      {
+        "id": "var-scribd-priv-1m",
+        "productId": "prod-scribd",
+        "name": "1 Bulan Private Fresh",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 22000,
+        "originalPrice": 70000,
+        "features": [
+          "Buka Dokumen Kunci & Makalah",
+          "Download PDF Dokumen Lengkap",
+          "Akses Everand Audiobook",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-scribd-priv-2m",
+        "productId": "prod-scribd",
+        "name": "2 Bulan Paket Hemat",
+        "accountType": "PRIVATE",
+        "durationMonths": 2,
+        "price": 39000,
+        "originalPrice": 140000,
+        "features": [
+          "Aktif 60 Hari Penuh",
+          "Full Akun Pribadi",
+          "Garansi Penuh"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-grammarly",
+    "slug": "grammarly-premium",
+    "title": "Grammarly Premium AI",
+    "category": "Edukasi & Produktivitas",
+    "tagline": "Koreksi Grammar Bahasa Inggris Tingkat Mahir & AI Paraphrase Akurat",
+    "description": "Meningkatkan kualitas penulisan bahasa Inggris untuk jurnal internasional, email bisnis, dan tugas kuliah dengan rekomendasi nada suara AI.",
+    "badge": "Grammar No. 1",
+    "icon": "Grammarly",
+    "loginUrl": "https://www.grammarly.com",
+    "variants": [
+      {
+        "id": "var-gram-share-1m",
+        "productId": "prod-grammarly",
+        "name": "1 Bulan Sharing Business",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 28000,
+        "originalPrice": 75000,
+        "features": [
+          "Koreksi Grammar 400+ Aturan",
+          "Tone Detector & AI Rewrites",
+          "Deteksi Plagiarisme Lanjutan",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-gram-priv-1m",
+        "productId": "prod-grammarly",
+        "name": "1 Bulan Private Account",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 85000,
+        "originalPrice": 220000,
+        "features": [
+          "Akun Full Milik Sendiri",
+          "Browser Extension Aktif",
+          "Garansi 30 Hari"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-tradingview",
+    "slug": "tradingview-pro",
+    "title": "TradingView Pro",
+    "category": "Edukasi & Produktivitas",
+    "tagline": "Analisis Chart Tanpa Batas Indikator, 4 Layar Split, & Bar Replay",
+    "description": "Platform charting saham, forex, dan kripto terlengkap di dunia. 5 indikator per chart, 2 chart dalam 1 window, dan alert harga real-time.",
+    "badge": "Pilihan Trader",
+    "icon": "TradingView",
+    "loginUrl": "https://www.tradingview.com",
+    "variants": [
+      {
+        "id": "var-tv-share-1m",
+        "productId": "prod-tradingview",
+        "name": "1 Bulan Pro Sharing",
+        "accountType": "SHARING",
+        "durationMonths": 1,
+        "price": 48000,
+        "originalPrice": 120000,
+        "features": [
+          "5 Indikator per Chart",
+          "2 Chart Split Screen",
+          "Fitur Bar Replay Intraday",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-tv-priv-1m",
+        "productId": "prod-tradingview",
+        "name": "1 Bulan Pro+ Private",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 145000,
+        "originalPrice": 390000,
+        "features": [
+          "10 Indikator & 4 Split Chart",
+          "Full Akun Pribadi",
+          "Garansi 30 Hari"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-spotify",
+    "slug": "spotify-premium",
+    "title": "Spotify Premium Individual",
+    "category": "Musik & Audio",
+    "tagline": "Dengarkan Musik Bebas Iklan, Download Offline, & Kualitas Suara High",
+    "description": "Nikmati streaming jutaan lagu tanpa jeda iklan, bebas skip lagu tanpa batas, dan download lagu untuk didengarkan offline.",
+    "badge": "Bebas Iklan",
+    "icon": "Spotify",
+    "loginUrl": "https://accounts.spotify.com/login",
+    "variants": [
+      {
+        "id": "var-spot-fresh-1m",
+        "productId": "prod-spotify",
+        "name": "1 Bulan Akun Fresh",
+        "accountType": "PRIVATE",
+        "durationMonths": 1,
+        "price": 15000,
+        "originalPrice": 55000,
+        "features": [
+          "Bebas Iklan Selamanya",
+          "Kualitas Audio Sangat Tinggi (320kbps)",
+          "Download Lagu Offline",
+          "Garansi 30 Hari"
+        ]
+      },
+      {
+        "id": "var-spot-3m",
+        "productId": "prod-spotify",
+        "name": "3 Bulan Hemat",
+        "accountType": "PRIVATE",
+        "durationMonths": 3,
+        "price": 38000,
+        "originalPrice": 165000,
+        "features": [
+          "Aktif 90 Hari",
+          "Garansi Ganti Akun Jika Terjadi Drop"
+        ]
       }
     ]
   }

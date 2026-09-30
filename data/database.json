@@ -3,12 +3,12 @@
     {
       "id": "prod-chatgpt",
       "slug": "chatgpt-plus-pro",
-      "title": "ChatGPT Plus & Pro",
-      "category": "AI & Productivity",
-      "tagline": "Akses GPT-4o, GPT-4, DALL·E 3, Voice Mode, & Unlimited Reasoning",
-      "description": "Akun ChatGPT OpenAI resmi dengan langganan aktif Plus / Pro. Kecepatan maksimal, analisis dokumen besar, dan pembuatan gambar HD tanpa antre.",
+      "title": "ChatGPT Plus & Pro (GPT-5 Astra & o1)",
+      "category": "AI & Flagship Models",
+      "tagline": "Akses Flagship OpenAI o1, o1-pro, o3-mini, GPT-4o, & GPT-5 Astra Preview",
+      "description": "Akun ChatGPT OpenAI resmi dengan langganan aktif Plus / Pro. Dilengkapi model reasoning mendalam, pembuatan gambar DALL·E 3 HD, dan Advanced Voice Mode interaktif.",
       "badge": "Paling Populer",
-      "icon": "Bot",
+      "icon": "ChatGPT",
       "loginUrl": "https://chatgpt.com/auth/login",
       "variants": [
         {
@@ -22,7 +22,7 @@
           "features": [
             "1 Pengguna (1 Device)",
             "Profil Khusus dengan PIN 4 Digit",
-            "Akses GPT-4o & DALL·E 3",
+            "Akses GPT-4o, o1, & DALL·E 3",
             "Garansi Penuh 30 Hari"
           ]
         },
@@ -44,7 +44,7 @@
         {
           "id": "var-cgpt-pro-1m",
           "productId": "prod-chatgpt",
-          "name": "ChatGPT Pro $200 (Unlimited)",
+          "name": "ChatGPT Pro $200 (Unlimited o1 Pro)",
           "accountType": "PRIVATE",
           "durationMonths": 1,
           "price": 490000,
@@ -59,14 +59,194 @@
       ]
     },
     {
+      "id": "prod-claude",
+      "slug": "claude-pro",
+      "title": "Claude 3.7 & 3.5 Sonnet Pro",
+      "category": "AI & Flagship Models",
+      "tagline": "Anthropic Claude 3.7 Sonnet (Hybrid Thinking), Artifacts, & Claude Fable Canvas",
+      "description": "Akses model kecerdasan coding & penalaran nomor 1 di dunia. Fitur Artifacts interaktif, jendela konteks 200k token, dan akses prioritas tinggi tanpa antre.",
+      "badge": "Rekomendasi Coder",
+      "icon": "Claude",
+      "loginUrl": "https://claude.ai/login",
+      "variants": [
+        {
+          "id": "var-claude-sharing-1m",
+          "productId": "prod-claude",
+          "name": "1 Bulan Sharing VIP (Sonnet 3.5 & 3.7)",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 55000,
+          "originalPrice": 120000,
+          "features": [
+            "Akses Model Claude 3.5 & 3.7 Sonnet",
+            "Fitur Artifacts & Fable Terbuka",
+            "Garansi Penuh 30 Hari"
+          ]
+        },
+        {
+          "id": "var-claude-private-1m",
+          "productId": "prod-claude",
+          "name": "1 Bulan Private Akun",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 195000,
+          "originalPrice": 380000,
+          "features": [
+            "Akun Full Milik Sendiri",
+            "Bebas Ganti Password & Email",
+            "Garansi Penuh 30 Hari"
+          ]
+        },
+        {
+          "id": "var-claude-team-1m",
+          "productId": "prod-claude",
+          "name": "1 Bulan Claude Team Pro (High Token)",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 340000,
+          "originalPrice": 650000,
+          "features": [
+            "Kapasitas Token Tertinggi",
+            "Akses Semua Model Claude",
+            "Garansi Penuh 30 Hari"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-deepseek",
+      "slug": "deepseek-r1-pro",
+      "title": "DeepSeek R1 & V3 Pro (Unlimited)",
+      "category": "AI & Flagship Models",
+      "tagline": "AI Penalaran No. 1 Dunia (671B Params Chain of Thought) Tanpa Server Busy",
+      "description": "Akses DeepSeek-R1 Full Model dan DeepSeek-V3 ultra-fast inference tanpa batasan server busy. Solusi penalaran matematika, logika, dan coding tingkat tinggi.",
+      "badge": "Trending 2026",
+      "icon": "DeepSeek",
+      "loginUrl": "https://chat.deepseek.com",
+      "variants": [
+        {
+          "id": "var-deepseek-vip-1m",
+          "productId": "prod-deepseek",
+          "name": "1 Bulan VIP Priority Server",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 35000,
+          "originalPrice": 75000,
+          "features": [
+            "Bebas Antre & Tanpa Server Busy",
+            "Model R1 671B Chain of Thought",
+            "Fitur Web Search Real-Time",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-deepseek-key-3m",
+          "productId": "prod-deepseek",
+          "name": "3 Bulan Hemat Dedicated Access",
+          "accountType": "PRIVATE",
+          "durationMonths": 3,
+          "price": 85000,
+          "originalPrice": 195000,
+          "features": [
+            "Aktif 90 Hari Penuh",
+            "Akses Prioritas Dedikasi",
+            "Garansi Penggantian"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-grok",
+      "slug": "grok-3-supergrok",
+      "title": "xAI Grok 3 SuperGrok Pro",
+      "category": "AI & Flagship Models",
+      "tagline": "SuperGrok Uncensored Fun Mode, Real-Time X/Twitter Intel, & Flux 1 Generator",
+      "description": "Model AI revolusioner dari Elon Musk xAI. Terkoneksi secara real-time dengan data X (Twitter), fitur tanpa sensor (Fun Mode), dan visual image generation Flux 1.",
+      "badge": "Uncensored AI",
+      "icon": "Grok",
+      "loginUrl": "https://grok.x.ai",
+      "variants": [
+        {
+          "id": "var-grok-sharing-1m",
+          "productId": "prod-grok",
+          "name": "1 Bulan Sharing VIP (Profil PIN)",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 45000,
+          "originalPrice": 95000,
+          "features": [
+            "Akses Grok 2 & Grok 3",
+            "Mode Uncensored / Fun Mode Aktif",
+            "Generate Gambar Flux 1 Unlimited",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-grok-private-1m",
+          "productId": "prod-grok",
+          "name": "1 Bulan Private X Premium+",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 165000,
+          "originalPrice": 350000,
+          "features": [
+            "Akun X Premium+ Full Sendiri",
+            "Bebas Iklan di Timeline X",
+            "Garansi 30 Hari Penuh"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-perplexity",
+      "slug": "perplexity-pro",
+      "title": "Perplexity Pro (Search AI All-in-One)",
+      "category": "AI & Flagship Models",
+      "tagline": "Satu Langganan untuk Semua AI: Claude 3.5, GPT-4o, Sonar Large, & $5 API Credit",
+      "description": "Mesin pencari berbasis AI tercanggih di dunia. Bebas memilih engine Claude 3.5 Sonnet, GPT-4o, atau Sonar. Menyertakan sitasi ilmiah, upload PDF, dan kredit API bulanan.",
+      "badge": "Favorit Peneliti",
+      "icon": "Perplexity",
+      "loginUrl": "https://www.perplexity.ai",
+      "variants": [
+        {
+          "id": "var-perp-priv-1m",
+          "productId": "prod-perplexity",
+          "name": "1 Bulan Private Akun Baru",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 65000,
+          "originalPrice": 150000,
+          "features": [
+            "Pro Search Tanpa Batas (300+/hari)",
+            "Pilih Model AI Sesuka Hati",
+            "Garansi Penuh 30 Hari"
+          ]
+        },
+        {
+          "id": "var-perp-edu-1y",
+          "productId": "prod-perplexity",
+          "name": "1 Tahun Promo Mahasiswa",
+          "accountType": "PRIVATE",
+          "durationMonths": 12,
+          "price": 290000,
+          "originalPrice": 1450000,
+          "features": [
+            "Aktif 1 Tahun Penuh",
+            "Kredit API $5/Bulan",
+            "Garansi Resmi 365 Hari"
+          ]
+        }
+      ]
+    },
+    {
       "id": "prod-gemini",
       "slug": "gemini-advanced-pro",
       "title": "Gemini Advanced 18 Bulan",
-      "category": "AI & Productivity",
-      "tagline": "Google One AI Premium 2TB Storage & Gemini 1.5 Pro 1M Context",
-      "description": "Langganan Google AI Premium dengan integrasi langsung di Docs, Gmail, Drive, serta jendela konteks 1–2 juta token untuk analisis video dan repositori kode besar.",
+      "category": "AI & Flagship Models",
+      "tagline": "Google One AI Premium 2TB Storage & Gemini 2.0 Flash Thinking 1M Context",
+      "description": "Langganan resmi Google AI Premium aktif 18 bulan penuh. Mendapatkan kapasitas cloud Google Drive 2TB, Gemini 1.5/2.0 Pro terintegrasi langsung di Gmail dan Docs.",
       "badge": "Durasi Terpanjang",
-      "icon": "Sparkles",
+      "icon": "Gemini",
       "loginUrl": "https://gemini.google.com",
       "variants": [
         {
@@ -101,14 +281,153 @@
       ]
     },
     {
+      "id": "prod-canva",
+      "slug": "canva-pro",
+      "title": "Canva Pro Designer",
+      "category": "Desain & Kreatif",
+      "tagline": "Buka 100+ Juta Template Premium, Magic Studio AI, Brand Kit, & Cloud 1TB",
+      "description": "Paket Canva Pro resmi untuk mahasiswa, desainer, dan bisnis online. Bebas download resolusi transparan, hapus background 1 klik, dan gunakan semua elemen VIP.",
+      "badge": "Wajib Mahasiswa",
+      "icon": "Canva",
+      "loginUrl": "https://www.canva.com/login",
+      "variants": [
+        {
+          "id": "var-canva-invite-1m",
+          "productId": "prod-canva",
+          "name": "1 Bulan Invite Member Pro (Email Sendiri)",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 12000,
+          "originalPrice": 35000,
+          "features": [
+            "Masuk ke Email Pribadi Anda",
+            "Buka Semua Elemen & Template VIP",
+            "Magic Studio AI Generator",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-canva-edu-1y",
+          "productId": "prod-canva",
+          "name": "1 Tahun Edu / Designer Pro",
+          "accountType": "PRIVATE",
+          "durationMonths": 12,
+          "price": 35000,
+          "originalPrice": 180000,
+          "features": [
+            "Aktif 1 Tahun Penuh",
+            "Bebas Hapus Background & Resize",
+            "Garansi 1 Tahun"
+          ]
+        },
+        {
+          "id": "var-canva-team-1y",
+          "productId": "prod-canva",
+          "name": "1 Tahun Private Admin Team (Bisa Invite 5 Teman)",
+          "accountType": "PRIVATE",
+          "durationMonths": 12,
+          "price": 95000,
+          "originalPrice": 450000,
+          "features": [
+            "Akses Brand Kit & Font Kustom",
+            "Bisa Tambah 5 Akun Anggota",
+            "Garansi Penuh 1 Tahun"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-capcut",
+      "slug": "capcut-pro",
+      "title": "CapCut Pro Desktop & Mobile",
+      "category": "Desain & Kreatif",
+      "tagline": "Buka Semua Filter VIP, AI Auto-Caption, & Ekspor Video 4K 60FPS",
+      "description": "Aplikasi editing video paling diminati untuk TikTok, Reels, dan YouTube Shorts. Semua efek AI, template pro, dan audio tanpa watermark.",
+      "badge": "Favorit Kreator",
+      "icon": "CapCut",
+      "loginUrl": "https://www.capcut.com/login",
+      "variants": [
+        {
+          "id": "var-capcut-sharing-1m",
+          "productId": "prod-capcut",
+          "name": "1 Bulan Sharing VIP",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 18000,
+          "originalPrice": 49000,
+          "features": [
+            "Bisa Login di HP / Laptop (Windows & Mac)",
+            "Semua Efek & Filter VIP Terbuka",
+            "Ekspor Video 4K 60fps",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-capcut-private-1y",
+          "productId": "prod-capcut",
+          "name": "1 Tahun Private VIP",
+          "accountType": "PRIVATE",
+          "durationMonths": 12,
+          "price": 120000,
+          "originalPrice": 350000,
+          "features": [
+            "Aktif 1 Tahun Penuh",
+            "Akun Milik Sendiri",
+            "Garansi Penggantian Cepat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-freepik",
+      "slug": "freepik-premium",
+      "title": "Freepik Premium & AI Mockup",
+      "category": "Desain & Kreatif",
+      "tagline": "Download Ribuan Aset Desain Vektor, PSD, & Lisensi Komersial Bebas Pakai",
+      "description": "Gudang aset desain grafis terbesar di dunia. Akses tanpa batas ke jutaan file vector, foto kualitas tinggi, PSD mockup, serta fitur AI Image Generator Freepik.",
+      "badge": "Pilihan Desainer",
+      "icon": "Freepik",
+      "loginUrl": "https://www.freepik.com",
+      "variants": [
+        {
+          "id": "var-freepik-share-1m",
+          "productId": "prod-freepik",
+          "name": "1 Bulan Sharing Download Harian",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 35000,
+          "originalPrice": 85000,
+          "features": [
+            "Download File Premium Setiap Hari",
+            "Format Vektor AI, EPS, & PSD Mockup",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-freepik-priv-1m",
+          "productId": "prod-freepik",
+          "name": "1 Bulan Private Account",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 120000,
+          "originalPrice": 250000,
+          "features": [
+            "Akun Pribadi Bebas Akses Penuh",
+            "Lisensi Komersial Lengkap",
+            "Garansi 30 Hari"
+          ]
+        }
+      ]
+    },
+    {
       "id": "prod-netflix",
       "slug": "netflix-premium-4k",
       "title": "Netflix Premium 4K UHD",
-      "category": "Streaming & Movies",
+      "category": "Streaming & Film",
       "tagline": "Nonton Bioskop 4K Ultra HD & Spatial Audio Tanpa Iklan",
       "description": "Akun resmi Netflix Plan Premium Ultra HD. Menjamin streaming lancar tanpa masalah screen limit atau household lock.",
       "badge": "Best Seller Streaming",
-      "icon": "Film",
+      "icon": "Netflix",
       "loginUrl": "https://netflix.com/login",
       "variants": [
         {
@@ -158,84 +477,251 @@
       ]
     },
     {
-      "id": "prod-capcut",
-      "slug": "capcut-pro",
-      "title": "CapCut Pro Desktop & Mobile",
-      "category": "Design & Creative",
-      "tagline": "Buka Semua Filter VIP, AI Auto-Caption, & 4K 60FPS Export",
-      "description": "Paket editing video favorit konten kreator TikTok, Reels, dan YouTube Shorts dengan efek AI dan template pro tanpa watermark.",
-      "badge": "Favorit Kreator",
-      "icon": "Scissors",
-      "loginUrl": "https://www.capcut.com/login",
+      "id": "prod-prime",
+      "slug": "prime-video-4k",
+      "title": "Amazon Prime Video 4K",
+      "category": "Streaming & Film",
+      "tagline": "Nonton The Boys, Rings of Power, & Film Box Office 4K UHD + HDR10",
+      "description": "Layanan streaming premium dari Amazon. Menikmati ratusan film box office original kualitas 4K HDR dengan audio Dolby Atmos.",
+      "badge": "Resolusi 4K HDR",
+      "icon": "PrimeVideo",
+      "loginUrl": "https://www.primevideo.com",
       "variants": [
         {
-          "id": "var-capcut-sharing-1m",
-          "productId": "prod-capcut",
-          "name": "1 Bulan Sharing VIP",
+          "id": "var-prime-share-1m",
+          "productId": "prod-prime",
+          "name": "1 Bulan Sharing (1 Profil + PIN)",
           "accountType": "SHARING",
           "durationMonths": 1,
-          "price": 18000,
-          "originalPrice": 49000,
+          "price": 19000,
+          "originalPrice": 45000,
           "features": [
-            "Bisa Login di HP / Laptop (Windows & Mac)",
-            "Semua Efek & Filter VIP Terbuka",
-            "Ekspor Video 4K 60fps",
-            "Garansi 30 Hari"
+            "Nonton Kualitas 4K UHD + HDR",
+            "1 Device Aktif Bersamaan",
+            "Garansi Penuh 30 Hari"
           ]
         },
         {
-          "id": "var-capcut-private-1y",
-          "productId": "prod-capcut",
-          "name": "1 Tahun Private VIP",
+          "id": "var-prime-priv-1m",
+          "productId": "prod-prime",
+          "name": "1 Bulan Private Full Account",
           "accountType": "PRIVATE",
-          "durationMonths": 12,
-          "price": 120000,
-          "originalPrice": 350000,
+          "durationMonths": 1,
+          "price": 59000,
+          "originalPrice": 99000,
           "features": [
-            "Aktif 1 Tahun Penuh",
-            "Akun Milik Sendiri",
-            "Garansi Penggantian Cepat"
+            "Bebas Bikin Banyak Profil",
+            "Nonton di 3 Layar Sekaligus",
+            "Garansi 30 Hari"
           ]
         }
       ]
     },
     {
-      "id": "prod-spotify",
-      "slug": "spotify-premium",
-      "title": "Spotify Premium Individual",
-      "category": "Music & Audio",
-      "tagline": "Dengarkan Musik Bebas Iklan, Download Offline, & Kualitas Suara High",
-      "description": "Nikmati streaming jutaan lagu tanpa jeda iklan, bebas skip lagu tanpa batas, dan download lagu untuk didengarkan offline.",
-      "badge": "Bebas Iklan",
-      "icon": "Music",
-      "loginUrl": "https://accounts.spotify.com/login",
+      "id": "prod-wetv",
+      "slug": "wetv-vip",
+      "title": "WeTV VIP Asia",
+      "category": "Streaming & Film",
+      "tagline": "Nonton Episode Baru Lebih Cepat (Fast Track), Full HD 1080p Tanpa Iklan",
+      "description": "Platform nomor 1 untuk drama China, drama Asia, dan variety show Chuang. Buka episode VIP lebih awal tanpa jeda iklan.",
+      "badge": "Raja Drachin",
+      "icon": "WeTV",
+      "loginUrl": "https://wetv.vip",
       "variants": [
         {
-          "id": "var-spot-fresh-1m",
-          "productId": "prod-spotify",
-          "name": "1 Bulan Akun Fresh",
-          "accountType": "PRIVATE",
+          "id": "var-wetv-share-1m",
+          "productId": "prod-wetv",
+          "name": "1 Bulan Sharing VIP",
+          "accountType": "SHARING",
           "durationMonths": 1,
           "price": 15000,
-          "originalPrice": 55000,
+          "originalPrice": 39000,
           "features": [
-            "Bebas Iklan Selamanya",
-            "Kualitas Audio Sangat Tinggi (320kbps)",
-            "Download Lagu Offline",
+            "Nonton Tanpa Iklan",
+            "Kualitas Full HD 1080p",
+            "Akses Fitur Fast Track",
             "Garansi 30 Hari"
           ]
         },
         {
-          "id": "var-spot-3m",
-          "productId": "prod-spotify",
-          "name": "3 Bulan Hemat",
-          "accountType": "PRIVATE",
+          "id": "var-wetv-share-3m",
+          "productId": "prod-wetv",
+          "name": "3 Bulan Hemat VIP",
+          "accountType": "SHARING",
           "durationMonths": 3,
           "price": 38000,
-          "originalPrice": 165000,
+          "originalPrice": 99000,
           "features": [
-            "Aktif 90 Hari",
-            "Garansi Ganti Akun Jika Terjadi Drop"
+            "Aktif 90 Hari Penuh",
+            "Drakor & Drachin Eksklusif",
+            "Garansi Full"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-iqiyi",
+      "slug": "iqiyi-vip",
+      "title": "iQIYI VIP Premium",
+      "category": "Streaming & Film",
+      "tagline": "Streaming Drama Mandarin & Anime Populer Kualitas 4K Dolby Atmos",
+      "description": "Tonton drama romantis Asia, anime simulcast, dan reality show orisinal iQIYI dengan subtitle bahasa Indonesia berkualitas tinggi.",
+      "badge": "Anime & C-Drama",
+      "icon": "iQIYI",
+      "loginUrl": "https://www.iq.com",
+      "variants": [
+        {
+          "id": "var-iqiyi-share-1m",
+          "productId": "prod-iqiyi",
+          "name": "1 Bulan Standard Sharing",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 16000,
+          "originalPrice": 39000,
+          "features": [
+            "Kualitas Gambar 1080p/4K",
+            "Subtitle Bahasa Indonesia",
+            "Download Offline",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-iqiyi-priv-1m",
+          "productId": "prod-iqiyi",
+          "name": "1 Bulan Premium 4 Screen Private",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 39000,
+          "originalPrice": 89000,
+          "features": [
+            "Audio Dolby Atmos",
+            "Bisa Nonton di 4 Device",
+            "Garansi Penuh 30 Hari"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-bstation",
+      "slug": "bstation-bilibili-vip",
+      "title": "Bstation / Bilibili VIP",
+      "category": "Streaming & Film",
+      "tagline": "Nonton Anime Kualitas 4K 60fps & Bebas Akses Komik Premium Tanpa Sensor",
+      "description": "Surganya pecinta anime dan animasi Jepang. Tonton episode terbaru anime populer tanpa potongan, resolusi 4K 60fps, dan download sepuasnya.",
+      "badge": "Anime 4K 60FPS",
+      "icon": "Bstation",
+      "loginUrl": "https://www.bilibili.tv",
+      "variants": [
+        {
+          "id": "var-bstation-share-1m",
+          "productId": "prod-bstation",
+          "name": "1 Bulan Sharing VIP",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 14000,
+          "originalPrice": 35000,
+          "features": [
+            "Resolusi 4K 60FPS & Dolby",
+            "Semua Anime VIP Terbuka",
+            "Download Tanpa Batas",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-bstation-share-3m",
+          "productId": "prod-bstation",
+          "name": "3 Bulan Hemat VIP",
+          "accountType": "SHARING",
+          "durationMonths": 3,
+          "price": 35000,
+          "originalPrice": 89000,
+          "features": [
+            "Aktif 90 Hari Penuh",
+            "Koleksi Manga & Anime VIP",
+            "Garansi Full"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-viu",
+      "slug": "viu-premium",
+      "title": "Viu Premium",
+      "category": "Streaming & Film",
+      "tagline": "Download Offline & Nonton Drama Korea Tayang Barengan Korea Sub Indo",
+      "description": "Pusat drakor terlengkap dengan subtitle Indonesia tercepat (4-8 jam setelah penayangan di Korea Selatan). Bebas iklan di Smart TV dan HP.",
+      "badge": "Drakor Kilat",
+      "icon": "Viu",
+      "loginUrl": "https://www.viu.com",
+      "variants": [
+        {
+          "id": "var-viu-priv-1m",
+          "productId": "prod-viu",
+          "name": "1 Bulan Private Akun Fresh",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 15000,
+          "originalPrice": 39000,
+          "features": [
+            "Subtitle Indonesia Tercepat",
+            "Bebas Iklan di TV & HP",
+            "Download Tayangan Offline",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-viu-priv-6m",
+          "productId": "prod-viu",
+          "name": "6 Bulan Paket Hemat",
+          "accountType": "PRIVATE",
+          "durationMonths": 6,
+          "price": 45000,
+          "originalPrice": 120000,
+          "features": [
+            "Aktif 180 Hari Penuh",
+            "Full Akun Pribadi",
+            "Garansi 6 Bulan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-crunchyroll",
+      "slug": "crunchyroll-mega-fan",
+      "title": "Crunchyroll Mega Fan",
+      "category": "Streaming & Film",
+      "tagline": "Nonton Anime 1 Jam Setelah Tayang di Jepang, Download Offline & 4 Layar",
+      "description": "Platform anime resmi terbesar di dunia. Akses simulcast legal Attack on Titan, Jujutsu Kaisen, Demon Slayer, One Piece langsung dari Jepang.",
+      "badge": "Simulcast Jepang",
+      "icon": "Crunchyroll",
+      "loginUrl": "https://www.crunchyroll.com",
+      "variants": [
+        {
+          "id": "var-crunchy-share-1m",
+          "productId": "prod-crunchyroll",
+          "name": "1 Bulan Mega Fan Sharing",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 18000,
+          "originalPrice": 45000,
+          "features": [
+            "Simulcast 1 Jam Pasca Jepang",
+            "Bebas Iklan Resolusi 1080p",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-crunchy-priv-1m",
+          "productId": "prod-crunchyroll",
+          "name": "1 Bulan Mega Fan Private (4 Layar)",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 49000,
+          "originalPrice": 99000,
+          "features": [
+            "Streaming di 4 Layar Sekaligus",
+            "Download Offline di Aplikasi",
+            "Garansi Penuh 30 Hari"
           ]
         }
       ]
@@ -244,11 +730,11 @@
       "id": "prod-youtube",
       "slug": "youtube-premium",
       "title": "YouTube Premium & Music",
-      "category": "Streaming & Movies",
+      "category": "Streaming & Film",
       "tagline": "Bebas Iklan di TV, HP, & Laptop + YouTube Music Full Akses",
-      "description": "Putar video di latar belakang (*background play*) saat layar HP mati, bebas iklan di smart TV, dan akses penuh ke YouTube Music.",
+      "description": "Putar video di latar belakang (background play) saat layar HP mati, bebas iklan di smart TV, dan akses penuh ke YouTube Music.",
       "badge": "Tanpa Iklan",
-      "icon": "PlayCircle",
+      "icon": "YouTube",
       "loginUrl": "https://accounts.google.com",
       "variants": [
         {
@@ -283,42 +769,210 @@
       ]
     },
     {
-      "id": "prod-claude",
-      "slug": "claude-pro",
-      "title": "Claude 3.5 Sonnet Pro",
-      "category": "AI & Productivity",
-      "tagline": "Model AI Coding & Writing No. 1 dengan Fitur Artifacts Interaktif",
-      "description": "Akses Claude 3.5 Sonnet & Claude 3 Opus resmi Anthropic. Kapasitas 5x lipat lebih banyak, akses prioritas di jam sibuk, dan kemampuan coding canggih.",
-      "badge": "Rekomendasi Coder",
-      "icon": "Claude",
-      "loginUrl": "https://claude.ai/login",
+      "id": "prod-quillbot",
+      "slug": "quillbot-premium",
+      "title": "QuillBot Premium",
+      "category": "Edukasi & Produktivitas",
+      "tagline": "Paraphrase Unlimited Kata, Grammar Checker, & Anti Plagiarism Detektor",
+      "description": "Sahabat setia mahasiswa dan akademisi. Mengubah kalimat skripsi dan artikel menjadi lebih ilmiah, tanpa batasan kata, dan bebas plagiarisme.",
+      "badge": "Sahabat Skripsi",
+      "icon": "QuillBot",
+      "loginUrl": "https://quillbot.com",
       "variants": [
         {
-          "id": "var-claude-sharing-1m",
-          "productId": "prod-claude",
+          "id": "var-quill-share-1m",
+          "productId": "prod-quillbot",
           "name": "1 Bulan Sharing VIP",
           "accountType": "SHARING",
           "durationMonths": 1,
-          "price": 55000,
-          "originalPrice": 120000,
+          "price": 25000,
+          "originalPrice": 60000,
           "features": [
-            "Akses Model Claude 3.5 Sonnet",
-            "Fitur Artifacts Terbuka",
-            "Garansi Penuh 30 Hari"
+            "Paraphraser Tanpa Batas Kata",
+            "Semua Mode Penulisan Terbuka",
+            "Pengecekan Plagiarisme",
+            "Garansi 30 Hari"
           ]
         },
         {
-          "id": "var-claude-private-1m",
-          "productId": "prod-claude",
-          "name": "1 Bulan Private Akun",
+          "id": "var-quill-priv-1m",
+          "productId": "prod-quillbot",
+          "name": "1 Bulan Private Full Account",
           "accountType": "PRIVATE",
           "durationMonths": 1,
-          "price": 195000,
-          "originalPrice": 380000,
+          "price": 75000,
+          "originalPrice": 180000,
+          "features": [
+            "Akun Pribadi Milik Sendiri",
+            "Integrasi Chrome & MS Word",
+            "Garansi Penuh 30 Hari"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-scribd",
+      "slug": "scribd-everand",
+      "title": "Scribd / Everand Unlimited",
+      "category": "Edukasi & Produktivitas",
+      "tagline": "Buka Dokumen Skripsi, Jurnal Internasional, Ebook, & Audiobook Tanpa Batas",
+      "description": "Perpustakaan digital raksasa berisi jutaan buku bestseller, audiobook, presentasi, makalah, dan jurnal ilmiah untuk referensi tugas akhir.",
+      "badge": "Jutaan Buku",
+      "icon": "Scribd",
+      "loginUrl": "https://www.scribd.com/login",
+      "variants": [
+        {
+          "id": "var-scribd-priv-1m",
+          "productId": "prod-scribd",
+          "name": "1 Bulan Private Fresh",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 22000,
+          "originalPrice": 70000,
+          "features": [
+            "Buka Dokumen Kunci & Makalah",
+            "Download PDF Dokumen Lengkap",
+            "Akses Everand Audiobook",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-scribd-priv-2m",
+          "productId": "prod-scribd",
+          "name": "2 Bulan Paket Hemat",
+          "accountType": "PRIVATE",
+          "durationMonths": 2,
+          "price": 39000,
+          "originalPrice": 140000,
+          "features": [
+            "Aktif 60 Hari Penuh",
+            "Full Akun Pribadi",
+            "Garansi Penuh"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-grammarly",
+      "slug": "grammarly-premium",
+      "title": "Grammarly Premium AI",
+      "category": "Edukasi & Produktivitas",
+      "tagline": "Koreksi Grammar Bahasa Inggris Tingkat Mahir & AI Paraphrase Akurat",
+      "description": "Meningkatkan kualitas penulisan bahasa Inggris untuk jurnal internasional, email bisnis, dan tugas kuliah dengan rekomendasi nada suara AI.",
+      "badge": "Grammar No. 1",
+      "icon": "Grammarly",
+      "loginUrl": "https://www.grammarly.com",
+      "variants": [
+        {
+          "id": "var-gram-share-1m",
+          "productId": "prod-grammarly",
+          "name": "1 Bulan Sharing Business",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 28000,
+          "originalPrice": 75000,
+          "features": [
+            "Koreksi Grammar 400+ Aturan",
+            "Tone Detector & AI Rewrites",
+            "Deteksi Plagiarisme Lanjutan",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-gram-priv-1m",
+          "productId": "prod-grammarly",
+          "name": "1 Bulan Private Account",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 85000,
+          "originalPrice": 220000,
           "features": [
             "Akun Full Milik Sendiri",
-            "Bebas Ganti Password & Email",
-            "Garansi Penuh 30 Hari"
+            "Browser Extension Aktif",
+            "Garansi 30 Hari"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-tradingview",
+      "slug": "tradingview-pro",
+      "title": "TradingView Pro",
+      "category": "Edukasi & Produktivitas",
+      "tagline": "Analisis Chart Tanpa Batas Indikator, 4 Layar Split, & Bar Replay",
+      "description": "Platform charting saham, forex, dan kripto terlengkap di dunia. 5 indikator per chart, 2 chart dalam 1 window, dan alert harga real-time.",
+      "badge": "Pilihan Trader",
+      "icon": "TradingView",
+      "loginUrl": "https://www.tradingview.com",
+      "variants": [
+        {
+          "id": "var-tv-share-1m",
+          "productId": "prod-tradingview",
+          "name": "1 Bulan Pro Sharing",
+          "accountType": "SHARING",
+          "durationMonths": 1,
+          "price": 48000,
+          "originalPrice": 120000,
+          "features": [
+            "5 Indikator per Chart",
+            "2 Chart Split Screen",
+            "Fitur Bar Replay Intraday",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-tv-priv-1m",
+          "productId": "prod-tradingview",
+          "name": "1 Bulan Pro+ Private",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 145000,
+          "originalPrice": 390000,
+          "features": [
+            "10 Indikator & 4 Split Chart",
+            "Full Akun Pribadi",
+            "Garansi 30 Hari"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod-spotify",
+      "slug": "spotify-premium",
+      "title": "Spotify Premium Individual",
+      "category": "Musik & Audio",
+      "tagline": "Dengarkan Musik Bebas Iklan, Download Offline, & Kualitas Suara High",
+      "description": "Nikmati streaming jutaan lagu tanpa jeda iklan, bebas skip lagu tanpa batas, dan download lagu untuk didengarkan offline.",
+      "badge": "Bebas Iklan",
+      "icon": "Spotify",
+      "loginUrl": "https://accounts.spotify.com/login",
+      "variants": [
+        {
+          "id": "var-spot-fresh-1m",
+          "productId": "prod-spotify",
+          "name": "1 Bulan Akun Fresh",
+          "accountType": "PRIVATE",
+          "durationMonths": 1,
+          "price": 15000,
+          "originalPrice": 55000,
+          "features": [
+            "Bebas Iklan Selamanya",
+            "Kualitas Audio Sangat Tinggi (320kbps)",
+            "Download Lagu Offline",
+            "Garansi 30 Hari"
+          ]
+        },
+        {
+          "id": "var-spot-3m",
+          "productId": "prod-spotify",
+          "name": "3 Bulan Hemat",
+          "accountType": "PRIVATE",
+          "durationMonths": 3,
+          "price": 38000,
+          "originalPrice": 165000,
+          "features": [
+            "Aktif 90 Hari",
+            "Garansi Ganti Akun Jika Terjadi Drop"
           ]
         }
       ]
@@ -326,155 +980,1420 @@
   ],
   "inventory": [
     {
-      "id": "inv-cgpt-1",
+      "id": "inv-var-cgpt-sharing-1m-1",
       "variantId": "var-cgpt-sharing-1m",
-      "email": "yospass_ai_plus01@vip-premium.id",
-      "password": "OpenAI#2026Plus!8",
+      "email": "yospass_chatgptplu_vip01@vip-akses.net",
+      "password": "YosPass#CHATGPTPLU12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "4925",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 4925. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-cgpt-sharing-1m-2",
+      "variantId": "var-cgpt-sharing-1m",
+      "email": "yospass_chatgptplu_vip02@vip-akses.net",
+      "password": "YosPass#CHATGPTPLU22026!",
       "profileName": "Profil 2 (VIP User)",
-      "profilePin": "7721",
-      "additionalNotes": "Harap gunakan Profil 2 saja. Dilarang mengubah password atau nama profil agar garansi 30 hari tetap berlaku.",
-      "status": "SOLD",
-      "createdAt": "2026-09-30T16:31:45.175Z",
-      "orderId": "ord-1790785911661-rgfe3",
-      "soldAt": "2026-09-30T16:31:57.748Z"
+      "profilePin": "6662",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 6662. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
     },
     {
-      "id": "inv-cgpt-2",
+      "id": "inv-var-cgpt-sharing-1m-3",
       "variantId": "var-cgpt-sharing-1m",
-      "email": "yospass_ai_plus02@vip-premium.id",
-      "password": "GPT4o#MegaPro99!",
-      "profileName": "Profil 4 (Member)",
-      "profilePin": "1904",
-      "additionalNotes": "Maksimal login di 1 device. Dilarang logout dari perangkat lain.",
-      "status": "SOLD",
-      "createdAt": "2026-09-30T16:31:45.175Z",
-      "orderId": "ord-1790787941700-rztl8",
-      "soldAt": "2026-09-30T17:05:41.736Z"
+      "email": "yospass_chatgptplu_vip03@vip-akses.net",
+      "password": "YosPass#CHATGPTPLU32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "7578",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 7578. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
     },
     {
-      "id": "inv-cgpt-priv-1",
+      "id": "inv-var-cgpt-private-1m-1",
       "variantId": "var-cgpt-private-1m",
-      "email": "cgpt_priv_yospass10@member-vip.net",
-      "password": "PrivatePass#2026Secure!",
-      "additionalNotes": "Akun full private. Anda bebas mengganti password dan menghubungkan ke nomor telepon pribadi Anda.",
+      "email": "yospass_chatgptplu_vip01@vip-akses.net",
+      "password": "YosPass#CHATGPTPLU12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
       "status": "AVAILABLE",
-      "createdAt": "2026-09-30T16:31:45.176Z"
+      "createdAt": "2026-09-30T19:38:24.540Z"
     },
     {
-      "id": "inv-gemini-18m-1",
-      "variantId": "var-gemini-18m-edu",
-      "email": "googleone_ai_18m_01@edu-enterprise.org",
-      "password": "Gemini18M#UltraSuper!",
-      "additionalNotes": "Google One AI Premium aktif 18 Bulan. Sudah terisi penyimpanan 2TB Drive. Bebas ganti password dan nomor pemulihan.",
+      "id": "inv-var-cgpt-private-1m-2",
+      "variantId": "var-cgpt-private-1m",
+      "email": "yospass_chatgptplu_vip02@vip-akses.net",
+      "password": "YosPass#CHATGPTPLU22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
       "status": "AVAILABLE",
-      "createdAt": "2026-09-30T16:31:45.176Z"
+      "createdAt": "2026-09-30T19:38:24.540Z"
     },
     {
-      "id": "inv-gemini-18m-2",
-      "variantId": "var-gemini-18m-edu",
-      "email": "googleone_ai_18m_02@edu-enterprise.org",
-      "password": "GoogleAI#2026ProMax!",
-      "additionalNotes": "Akun aktif 18 Bulan resmi. Jangan ragu hubungi kami jika butuh bantuan aktivasi di Google Docs/Drive.",
+      "id": "inv-var-cgpt-private-1m-3",
+      "variantId": "var-cgpt-private-1m",
+      "email": "yospass_chatgptplu_vip03@vip-akses.net",
+      "password": "YosPass#CHATGPTPLU32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
       "status": "AVAILABLE",
-      "createdAt": "2026-09-30T16:31:45.176Z"
+      "createdAt": "2026-09-30T19:38:24.540Z"
     },
     {
-      "id": "inv-nflx-1",
-      "variantId": "var-nflx-sharing-1m",
-      "email": "nflx_premium_4k_01@cinema-stream.tv",
-      "password": "NflxUltra#4K2026!",
-      "profileName": "Profil 3 (VIP Room)",
-      "profilePin": "3819",
-      "additionalNotes": "Gunakan Profil 3 dengan PIN 3819. Dilarang menambah profil baru atau mengubah email/password agar garansi aktif.",
-      "status": "SOLD",
-      "createdAt": "2026-09-30T16:31:45.176Z",
-      "orderId": "ord-1790786325377-gabrg",
-      "soldAt": "2026-09-30T16:38:54.257Z"
-    },
-    {
-      "id": "inv-nflx-2",
-      "variantId": "var-nflx-sharing-1m",
-      "email": "nflx_premium_4k_02@cinema-stream.tv",
-      "password": "StreamPass#Nflx990!",
-      "profileName": "Profil 1 (Movie Lover)",
-      "profilePin": "8241",
-      "additionalNotes": "Kualitas otomatis 4K HDR. Nikmati tontonan favoritmu.",
-      "status": "AVAILABLE",
-      "createdAt": "2026-09-30T16:31:45.176Z"
-    },
-    {
-      "id": "inv-nflx-priv-1",
-      "variantId": "var-nflx-private-1m",
-      "email": "nflx_private_home01@stream-pass.tv",
-      "password": "PrivateNflx#MasterKey1!",
-      "additionalNotes": "Akun Private 5 Profil bebas pakai untuk keluarga/teman. Bisa ganti password dan atur PIN masing-masing profil.",
-      "status": "AVAILABLE",
-      "createdAt": "2026-09-30T16:31:45.176Z"
-    },
-    {
-      "id": "inv-capcut-1",
-      "variantId": "var-capcut-sharing-1m",
-      "email": "capcut_pro_vip01@editor-space.com",
-      "password": "CapcutVIP#2026Creator!",
-      "additionalNotes": "Bisa digunakan di aplikasi CapCut Desktop (Windows/Mac) maupun HP (Android/iOS). Nikmati semua efek pro!",
-      "status": "AVAILABLE",
-      "createdAt": "2026-09-30T16:31:45.176Z"
-    },
-    {
-      "id": "inv-spotify-1",
-      "variantId": "var-spot-fresh-1m",
-      "email": "spotify_premium_user01@music-vibes.fm",
-      "password": "SpotifySound#HighRes99!",
-      "additionalNotes": "Akun fresh individual. Bebas download lagu offline kualitas 320kbps tanpa jeda iklan.",
-      "status": "AVAILABLE",
-      "createdAt": "2026-09-30T16:31:45.176Z"
-    },
-    {
-      "id": "inv-yt-1",
-      "variantId": "var-yt-fresh-1m",
-      "email": "yt_premium_invite01@media-hub.net",
-      "password": "YoutubeAdFree#2026Pass!",
-      "additionalNotes": "Silakan login dan nikmati streaming YouTube bebas iklan serta YouTube Music kualitas premium.",
-      "status": "AVAILABLE",
-      "createdAt": "2026-09-30T16:31:45.176Z"
-    },
-    {
-      "id": "inv-cgpt-pro-1",
+      "id": "inv-var-cgpt-pro-1m-1",
       "variantId": "var-cgpt-pro-1m",
-      "email": "openai_o1_pro_yospass@tech-elite.org",
-      "password": "ProO1Model#SuperCompute2026!",
-      "additionalNotes": "Akun ChatGPT Pro $200 dengan o1 Pro mode. Akses komputasi mendalam tanpa batas.",
+      "email": "yospass_chatgptplu_vip01@vip-akses.net",
+      "password": "YosPass#CHATGPTPLU12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
       "status": "AVAILABLE",
-      "createdAt": "2026-09-30T17:05:35.876Z"
+      "createdAt": "2026-09-30T19:38:24.540Z"
     },
     {
-      "id": "inv-gemini-1m-1",
-      "variantId": "var-gemini-1m-fresh",
-      "email": "gemini_fresh_01@ai-user.net",
-      "password": "GeminiPro15#Secure2026!",
-      "additionalNotes": "Akun fresh Google AI. Siap pakai untuk analisis dokumen dan video 1 juta token.",
+      "id": "inv-var-cgpt-pro-1m-2",
+      "variantId": "var-cgpt-pro-1m",
+      "email": "yospass_chatgptplu_vip02@vip-akses.net",
+      "password": "YosPass#CHATGPTPLU22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
       "status": "AVAILABLE",
-      "createdAt": "2026-09-30T17:05:35.876Z"
+      "createdAt": "2026-09-30T19:38:24.540Z"
     },
     {
-      "id": "inv-capcut-priv-1y",
-      "variantId": "var-capcut-private-1y",
-      "email": "capcut_1year_priv01@editor-space.com",
-      "password": "Capcut1Year#PersonalPro26!",
-      "additionalNotes": "Akun CapCut Pro 1 Tahun Private. Bebas ganti password.",
+      "id": "inv-var-cgpt-pro-1m-3",
+      "variantId": "var-cgpt-pro-1m",
+      "email": "yospass_chatgptplu_vip03@vip-akses.net",
+      "password": "YosPass#CHATGPTPLU32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
       "status": "AVAILABLE",
-      "createdAt": "2026-09-30T17:05:35.876Z"
+      "createdAt": "2026-09-30T19:38:24.540Z"
     },
     {
-      "id": "inv-claude-1",
+      "id": "inv-var-claude-sharing-1m-1",
       "variantId": "var-claude-sharing-1m",
-      "email": "claude_vip_sonnet01@claude-dev.net",
-      "password": "Anthropic#Sonnet35Pro!",
-      "profileName": "Profil VIP Claude",
-      "profilePin": "5512",
-      "additionalNotes": "Akun Claude 3.5 Sonnet Pro. Gunakan dengan bijak untuk kebutuhan coding dan analisa dokumen.",
+      "email": "yospass_claude3735_vip01@vip-akses.net",
+      "password": "YosPass#CLAUDE373512026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "9743",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 9743. Dilarang mengubah data akun agar garansi tetap aktif.",
       "status": "AVAILABLE",
-      "createdAt": "2026-09-30T17:05:35.876Z"
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-claude-sharing-1m-2",
+      "variantId": "var-claude-sharing-1m",
+      "email": "yospass_claude3735_vip02@vip-akses.net",
+      "password": "YosPass#CLAUDE373522026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "5569",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 5569. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-claude-sharing-1m-3",
+      "variantId": "var-claude-sharing-1m",
+      "email": "yospass_claude3735_vip03@vip-akses.net",
+      "password": "YosPass#CLAUDE373532026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "6435",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 6435. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-claude-private-1m-1",
+      "variantId": "var-claude-private-1m",
+      "email": "yospass_claude3735_vip01@vip-akses.net",
+      "password": "YosPass#CLAUDE373512026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-claude-private-1m-2",
+      "variantId": "var-claude-private-1m",
+      "email": "yospass_claude3735_vip02@vip-akses.net",
+      "password": "YosPass#CLAUDE373522026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-claude-private-1m-3",
+      "variantId": "var-claude-private-1m",
+      "email": "yospass_claude3735_vip03@vip-akses.net",
+      "password": "YosPass#CLAUDE373532026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-claude-team-1m-1",
+      "variantId": "var-claude-team-1m",
+      "email": "yospass_claude3735_vip01@vip-akses.net",
+      "password": "YosPass#CLAUDE373512026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-claude-team-1m-2",
+      "variantId": "var-claude-team-1m",
+      "email": "yospass_claude3735_vip02@vip-akses.net",
+      "password": "YosPass#CLAUDE373522026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-claude-team-1m-3",
+      "variantId": "var-claude-team-1m",
+      "email": "yospass_claude3735_vip03@vip-akses.net",
+      "password": "YosPass#CLAUDE373532026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-deepseek-vip-1m-1",
+      "variantId": "var-deepseek-vip-1m",
+      "email": "yospass_deepseekr1_vip01@vip-akses.net",
+      "password": "YosPass#DEEPSEEKR112026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "9816",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 9816. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-deepseek-vip-1m-2",
+      "variantId": "var-deepseek-vip-1m",
+      "email": "yospass_deepseekr1_vip02@vip-akses.net",
+      "password": "YosPass#DEEPSEEKR122026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "6558",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 6558. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-deepseek-vip-1m-3",
+      "variantId": "var-deepseek-vip-1m",
+      "email": "yospass_deepseekr1_vip03@vip-akses.net",
+      "password": "YosPass#DEEPSEEKR132026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "1009",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 1009. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-deepseek-key-3m-1",
+      "variantId": "var-deepseek-key-3m",
+      "email": "yospass_deepseekr1_vip01@vip-akses.net",
+      "password": "YosPass#DEEPSEEKR112026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 3 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-deepseek-key-3m-2",
+      "variantId": "var-deepseek-key-3m",
+      "email": "yospass_deepseekr1_vip02@vip-akses.net",
+      "password": "YosPass#DEEPSEEKR122026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 3 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-deepseek-key-3m-3",
+      "variantId": "var-deepseek-key-3m",
+      "email": "yospass_deepseekr1_vip03@vip-akses.net",
+      "password": "YosPass#DEEPSEEKR132026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 3 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-grok-sharing-1m-1",
+      "variantId": "var-grok-sharing-1m",
+      "email": "yospass_xaigrok3su_vip01@vip-akses.net",
+      "password": "YosPass#XAIGROK3SU12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "9517",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 9517. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-grok-sharing-1m-2",
+      "variantId": "var-grok-sharing-1m",
+      "email": "yospass_xaigrok3su_vip02@vip-akses.net",
+      "password": "YosPass#XAIGROK3SU22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "4727",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 4727. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-grok-sharing-1m-3",
+      "variantId": "var-grok-sharing-1m",
+      "email": "yospass_xaigrok3su_vip03@vip-akses.net",
+      "password": "YosPass#XAIGROK3SU32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "2811",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 2811. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-grok-private-1m-1",
+      "variantId": "var-grok-private-1m",
+      "email": "yospass_xaigrok3su_vip01@vip-akses.net",
+      "password": "YosPass#XAIGROK3SU12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-grok-private-1m-2",
+      "variantId": "var-grok-private-1m",
+      "email": "yospass_xaigrok3su_vip02@vip-akses.net",
+      "password": "YosPass#XAIGROK3SU22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-grok-private-1m-3",
+      "variantId": "var-grok-private-1m",
+      "email": "yospass_xaigrok3su_vip03@vip-akses.net",
+      "password": "YosPass#XAIGROK3SU32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-perp-priv-1m-1",
+      "variantId": "var-perp-priv-1m",
+      "email": "yospass_perplexity_vip01@vip-akses.net",
+      "password": "YosPass#PERPLEXITY12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-perp-priv-1m-2",
+      "variantId": "var-perp-priv-1m",
+      "email": "yospass_perplexity_vip02@vip-akses.net",
+      "password": "YosPass#PERPLEXITY22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-perp-priv-1m-3",
+      "variantId": "var-perp-priv-1m",
+      "email": "yospass_perplexity_vip03@vip-akses.net",
+      "password": "YosPass#PERPLEXITY32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-perp-edu-1y-1",
+      "variantId": "var-perp-edu-1y",
+      "email": "yospass_perplexity_vip01@vip-akses.net",
+      "password": "YosPass#PERPLEXITY12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-perp-edu-1y-2",
+      "variantId": "var-perp-edu-1y",
+      "email": "yospass_perplexity_vip02@vip-akses.net",
+      "password": "YosPass#PERPLEXITY22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-perp-edu-1y-3",
+      "variantId": "var-perp-edu-1y",
+      "email": "yospass_perplexity_vip03@vip-akses.net",
+      "password": "YosPass#PERPLEXITY32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gemini-18m-edu-1",
+      "variantId": "var-gemini-18m-edu",
+      "email": "yospass_geminiadva_vip01@vip-akses.net",
+      "password": "YosPass#GEMINIADVA12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 18 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gemini-18m-edu-2",
+      "variantId": "var-gemini-18m-edu",
+      "email": "yospass_geminiadva_vip02@vip-akses.net",
+      "password": "YosPass#GEMINIADVA22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 18 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gemini-18m-edu-3",
+      "variantId": "var-gemini-18m-edu",
+      "email": "yospass_geminiadva_vip03@vip-akses.net",
+      "password": "YosPass#GEMINIADVA32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 18 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gemini-1m-fresh-1",
+      "variantId": "var-gemini-1m-fresh",
+      "email": "yospass_geminiadva_vip01@vip-akses.net",
+      "password": "YosPass#GEMINIADVA12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gemini-1m-fresh-2",
+      "variantId": "var-gemini-1m-fresh",
+      "email": "yospass_geminiadva_vip02@vip-akses.net",
+      "password": "YosPass#GEMINIADVA22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gemini-1m-fresh-3",
+      "variantId": "var-gemini-1m-fresh",
+      "email": "yospass_geminiadva_vip03@vip-akses.net",
+      "password": "YosPass#GEMINIADVA32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-canva-invite-1m-1",
+      "variantId": "var-canva-invite-1m",
+      "email": "yospass_canvaprode_vip01@vip-akses.net",
+      "password": "YosPass#CANVAPRODE12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "6506",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 6506. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-canva-invite-1m-2",
+      "variantId": "var-canva-invite-1m",
+      "email": "yospass_canvaprode_vip02@vip-akses.net",
+      "password": "YosPass#CANVAPRODE22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "7933",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 7933. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-canva-invite-1m-3",
+      "variantId": "var-canva-invite-1m",
+      "email": "yospass_canvaprode_vip03@vip-akses.net",
+      "password": "YosPass#CANVAPRODE32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "1879",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 1879. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-canva-edu-1y-1",
+      "variantId": "var-canva-edu-1y",
+      "email": "yospass_canvaprode_vip01@vip-akses.net",
+      "password": "YosPass#CANVAPRODE12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-canva-edu-1y-2",
+      "variantId": "var-canva-edu-1y",
+      "email": "yospass_canvaprode_vip02@vip-akses.net",
+      "password": "YosPass#CANVAPRODE22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-canva-edu-1y-3",
+      "variantId": "var-canva-edu-1y",
+      "email": "yospass_canvaprode_vip03@vip-akses.net",
+      "password": "YosPass#CANVAPRODE32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-canva-team-1y-1",
+      "variantId": "var-canva-team-1y",
+      "email": "yospass_canvaprode_vip01@vip-akses.net",
+      "password": "YosPass#CANVAPRODE12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-canva-team-1y-2",
+      "variantId": "var-canva-team-1y",
+      "email": "yospass_canvaprode_vip02@vip-akses.net",
+      "password": "YosPass#CANVAPRODE22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-canva-team-1y-3",
+      "variantId": "var-canva-team-1y",
+      "email": "yospass_canvaprode_vip03@vip-akses.net",
+      "password": "YosPass#CANVAPRODE32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-capcut-sharing-1m-1",
+      "variantId": "var-capcut-sharing-1m",
+      "email": "yospass_capcutprod_vip01@vip-akses.net",
+      "password": "YosPass#CAPCUTPROD12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "1209",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 1209. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-capcut-sharing-1m-2",
+      "variantId": "var-capcut-sharing-1m",
+      "email": "yospass_capcutprod_vip02@vip-akses.net",
+      "password": "YosPass#CAPCUTPROD22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "5081",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 5081. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-capcut-sharing-1m-3",
+      "variantId": "var-capcut-sharing-1m",
+      "email": "yospass_capcutprod_vip03@vip-akses.net",
+      "password": "YosPass#CAPCUTPROD32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "7605",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 7605. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-capcut-private-1y-1",
+      "variantId": "var-capcut-private-1y",
+      "email": "yospass_capcutprod_vip01@vip-akses.net",
+      "password": "YosPass#CAPCUTPROD12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-capcut-private-1y-2",
+      "variantId": "var-capcut-private-1y",
+      "email": "yospass_capcutprod_vip02@vip-akses.net",
+      "password": "YosPass#CAPCUTPROD22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-capcut-private-1y-3",
+      "variantId": "var-capcut-private-1y",
+      "email": "yospass_capcutprod_vip03@vip-akses.net",
+      "password": "YosPass#CAPCUTPROD32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 12 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-freepik-share-1m-1",
+      "variantId": "var-freepik-share-1m",
+      "email": "yospass_freepikpre_vip01@vip-akses.net",
+      "password": "YosPass#FREEPIKPRE12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "2574",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 2574. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-freepik-share-1m-2",
+      "variantId": "var-freepik-share-1m",
+      "email": "yospass_freepikpre_vip02@vip-akses.net",
+      "password": "YosPass#FREEPIKPRE22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "5901",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 5901. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-freepik-share-1m-3",
+      "variantId": "var-freepik-share-1m",
+      "email": "yospass_freepikpre_vip03@vip-akses.net",
+      "password": "YosPass#FREEPIKPRE32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "7814",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 7814. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-freepik-priv-1m-1",
+      "variantId": "var-freepik-priv-1m",
+      "email": "yospass_freepikpre_vip01@vip-akses.net",
+      "password": "YosPass#FREEPIKPRE12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-freepik-priv-1m-2",
+      "variantId": "var-freepik-priv-1m",
+      "email": "yospass_freepikpre_vip02@vip-akses.net",
+      "password": "YosPass#FREEPIKPRE22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-freepik-priv-1m-3",
+      "variantId": "var-freepik-priv-1m",
+      "email": "yospass_freepikpre_vip03@vip-akses.net",
+      "password": "YosPass#FREEPIKPRE32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-nflx-sharing-1m-1",
+      "variantId": "var-nflx-sharing-1m",
+      "email": "yospass_netflixpre_vip01@vip-akses.net",
+      "password": "YosPass#NETFLIXPRE12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "6994",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 6994. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-nflx-sharing-1m-2",
+      "variantId": "var-nflx-sharing-1m",
+      "email": "yospass_netflixpre_vip02@vip-akses.net",
+      "password": "YosPass#NETFLIXPRE22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "7045",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 7045. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-nflx-sharing-1m-3",
+      "variantId": "var-nflx-sharing-1m",
+      "email": "yospass_netflixpre_vip03@vip-akses.net",
+      "password": "YosPass#NETFLIXPRE32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "8314",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 8314. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-nflx-private-1m-1",
+      "variantId": "var-nflx-private-1m",
+      "email": "yospass_netflixpre_vip01@vip-akses.net",
+      "password": "YosPass#NETFLIXPRE12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-nflx-private-1m-2",
+      "variantId": "var-nflx-private-1m",
+      "email": "yospass_netflixpre_vip02@vip-akses.net",
+      "password": "YosPass#NETFLIXPRE22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-nflx-private-1m-3",
+      "variantId": "var-nflx-private-1m",
+      "email": "yospass_netflixpre_vip03@vip-akses.net",
+      "password": "YosPass#NETFLIXPRE32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-nflx-sharing-3m-1",
+      "variantId": "var-nflx-sharing-3m",
+      "email": "yospass_netflixpre_vip01@vip-akses.net",
+      "password": "YosPass#NETFLIXPRE12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "8282",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 8282. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-nflx-sharing-3m-2",
+      "variantId": "var-nflx-sharing-3m",
+      "email": "yospass_netflixpre_vip02@vip-akses.net",
+      "password": "YosPass#NETFLIXPRE22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "1548",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 1548. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-nflx-sharing-3m-3",
+      "variantId": "var-nflx-sharing-3m",
+      "email": "yospass_netflixpre_vip03@vip-akses.net",
+      "password": "YosPass#NETFLIXPRE32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "9643",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 9643. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-prime-share-1m-1",
+      "variantId": "var-prime-share-1m",
+      "email": "yospass_amazonprim_vip01@vip-akses.net",
+      "password": "YosPass#AMAZONPRIM12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "1228",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 1228. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-prime-share-1m-2",
+      "variantId": "var-prime-share-1m",
+      "email": "yospass_amazonprim_vip02@vip-akses.net",
+      "password": "YosPass#AMAZONPRIM22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "7699",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 7699. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-prime-share-1m-3",
+      "variantId": "var-prime-share-1m",
+      "email": "yospass_amazonprim_vip03@vip-akses.net",
+      "password": "YosPass#AMAZONPRIM32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "4362",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 4362. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-prime-priv-1m-1",
+      "variantId": "var-prime-priv-1m",
+      "email": "yospass_amazonprim_vip01@vip-akses.net",
+      "password": "YosPass#AMAZONPRIM12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-prime-priv-1m-2",
+      "variantId": "var-prime-priv-1m",
+      "email": "yospass_amazonprim_vip02@vip-akses.net",
+      "password": "YosPass#AMAZONPRIM22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-prime-priv-1m-3",
+      "variantId": "var-prime-priv-1m",
+      "email": "yospass_amazonprim_vip03@vip-akses.net",
+      "password": "YosPass#AMAZONPRIM32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-wetv-share-1m-1",
+      "variantId": "var-wetv-share-1m",
+      "email": "yospass_wetvvipasi_vip01@vip-akses.net",
+      "password": "YosPass#WETVVIPASI12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "6129",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 6129. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-wetv-share-1m-2",
+      "variantId": "var-wetv-share-1m",
+      "email": "yospass_wetvvipasi_vip02@vip-akses.net",
+      "password": "YosPass#WETVVIPASI22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "6190",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 6190. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-wetv-share-1m-3",
+      "variantId": "var-wetv-share-1m",
+      "email": "yospass_wetvvipasi_vip03@vip-akses.net",
+      "password": "YosPass#WETVVIPASI32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "9749",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 9749. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-wetv-share-3m-1",
+      "variantId": "var-wetv-share-3m",
+      "email": "yospass_wetvvipasi_vip01@vip-akses.net",
+      "password": "YosPass#WETVVIPASI12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "9871",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 9871. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-wetv-share-3m-2",
+      "variantId": "var-wetv-share-3m",
+      "email": "yospass_wetvvipasi_vip02@vip-akses.net",
+      "password": "YosPass#WETVVIPASI22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "4459",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 4459. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-wetv-share-3m-3",
+      "variantId": "var-wetv-share-3m",
+      "email": "yospass_wetvvipasi_vip03@vip-akses.net",
+      "password": "YosPass#WETVVIPASI32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "8043",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 8043. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-iqiyi-share-1m-1",
+      "variantId": "var-iqiyi-share-1m",
+      "email": "yospass_iqiyivippr_vip01@vip-akses.net",
+      "password": "YosPass#IQIYIVIPPR12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "6955",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 6955. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-iqiyi-share-1m-2",
+      "variantId": "var-iqiyi-share-1m",
+      "email": "yospass_iqiyivippr_vip02@vip-akses.net",
+      "password": "YosPass#IQIYIVIPPR22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "2124",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 2124. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-iqiyi-share-1m-3",
+      "variantId": "var-iqiyi-share-1m",
+      "email": "yospass_iqiyivippr_vip03@vip-akses.net",
+      "password": "YosPass#IQIYIVIPPR32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "9136",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 9136. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-iqiyi-priv-1m-1",
+      "variantId": "var-iqiyi-priv-1m",
+      "email": "yospass_iqiyivippr_vip01@vip-akses.net",
+      "password": "YosPass#IQIYIVIPPR12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-iqiyi-priv-1m-2",
+      "variantId": "var-iqiyi-priv-1m",
+      "email": "yospass_iqiyivippr_vip02@vip-akses.net",
+      "password": "YosPass#IQIYIVIPPR22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-iqiyi-priv-1m-3",
+      "variantId": "var-iqiyi-priv-1m",
+      "email": "yospass_iqiyivippr_vip03@vip-akses.net",
+      "password": "YosPass#IQIYIVIPPR32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-bstation-share-1m-1",
+      "variantId": "var-bstation-share-1m",
+      "email": "yospass_bstationbi_vip01@vip-akses.net",
+      "password": "YosPass#BSTATIONBI12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "6877",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 6877. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-bstation-share-1m-2",
+      "variantId": "var-bstation-share-1m",
+      "email": "yospass_bstationbi_vip02@vip-akses.net",
+      "password": "YosPass#BSTATIONBI22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "8020",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 8020. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-bstation-share-1m-3",
+      "variantId": "var-bstation-share-1m",
+      "email": "yospass_bstationbi_vip03@vip-akses.net",
+      "password": "YosPass#BSTATIONBI32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "1447",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 1447. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-bstation-share-3m-1",
+      "variantId": "var-bstation-share-3m",
+      "email": "yospass_bstationbi_vip01@vip-akses.net",
+      "password": "YosPass#BSTATIONBI12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "5971",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 5971. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-bstation-share-3m-2",
+      "variantId": "var-bstation-share-3m",
+      "email": "yospass_bstationbi_vip02@vip-akses.net",
+      "password": "YosPass#BSTATIONBI22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "9047",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 9047. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-bstation-share-3m-3",
+      "variantId": "var-bstation-share-3m",
+      "email": "yospass_bstationbi_vip03@vip-akses.net",
+      "password": "YosPass#BSTATIONBI32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "3893",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 3893. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-viu-priv-1m-1",
+      "variantId": "var-viu-priv-1m",
+      "email": "yospass_viupremium_vip01@vip-akses.net",
+      "password": "YosPass#VIUPREMIUM12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-viu-priv-1m-2",
+      "variantId": "var-viu-priv-1m",
+      "email": "yospass_viupremium_vip02@vip-akses.net",
+      "password": "YosPass#VIUPREMIUM22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-viu-priv-1m-3",
+      "variantId": "var-viu-priv-1m",
+      "email": "yospass_viupremium_vip03@vip-akses.net",
+      "password": "YosPass#VIUPREMIUM32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-viu-priv-6m-1",
+      "variantId": "var-viu-priv-6m",
+      "email": "yospass_viupremium_vip01@vip-akses.net",
+      "password": "YosPass#VIUPREMIUM12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 6 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-viu-priv-6m-2",
+      "variantId": "var-viu-priv-6m",
+      "email": "yospass_viupremium_vip02@vip-akses.net",
+      "password": "YosPass#VIUPREMIUM22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 6 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-viu-priv-6m-3",
+      "variantId": "var-viu-priv-6m",
+      "email": "yospass_viupremium_vip03@vip-akses.net",
+      "password": "YosPass#VIUPREMIUM32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 6 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-crunchy-share-1m-1",
+      "variantId": "var-crunchy-share-1m",
+      "email": "yospass_crunchyrol_vip01@vip-akses.net",
+      "password": "YosPass#CRUNCHYROL12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "6906",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 6906. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-crunchy-share-1m-2",
+      "variantId": "var-crunchy-share-1m",
+      "email": "yospass_crunchyrol_vip02@vip-akses.net",
+      "password": "YosPass#CRUNCHYROL22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "6210",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 6210. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-crunchy-share-1m-3",
+      "variantId": "var-crunchy-share-1m",
+      "email": "yospass_crunchyrol_vip03@vip-akses.net",
+      "password": "YosPass#CRUNCHYROL32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "2848",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 2848. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-crunchy-priv-1m-1",
+      "variantId": "var-crunchy-priv-1m",
+      "email": "yospass_crunchyrol_vip01@vip-akses.net",
+      "password": "YosPass#CRUNCHYROL12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-crunchy-priv-1m-2",
+      "variantId": "var-crunchy-priv-1m",
+      "email": "yospass_crunchyrol_vip02@vip-akses.net",
+      "password": "YosPass#CRUNCHYROL22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-crunchy-priv-1m-3",
+      "variantId": "var-crunchy-priv-1m",
+      "email": "yospass_crunchyrol_vip03@vip-akses.net",
+      "password": "YosPass#CRUNCHYROL32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-yt-fresh-1m-1",
+      "variantId": "var-yt-fresh-1m",
+      "email": "yospass_youtubepre_vip01@vip-akses.net",
+      "password": "YosPass#YOUTUBEPRE12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "1567",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 1567. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-yt-fresh-1m-2",
+      "variantId": "var-yt-fresh-1m",
+      "email": "yospass_youtubepre_vip02@vip-akses.net",
+      "password": "YosPass#YOUTUBEPRE22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "7778",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 7778. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-yt-fresh-1m-3",
+      "variantId": "var-yt-fresh-1m",
+      "email": "yospass_youtubepre_vip03@vip-akses.net",
+      "password": "YosPass#YOUTUBEPRE32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "7807",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 7807. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-yt-fresh-3m-1",
+      "variantId": "var-yt-fresh-3m",
+      "email": "yospass_youtubepre_vip01@vip-akses.net",
+      "password": "YosPass#YOUTUBEPRE12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 3 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-yt-fresh-3m-2",
+      "variantId": "var-yt-fresh-3m",
+      "email": "yospass_youtubepre_vip02@vip-akses.net",
+      "password": "YosPass#YOUTUBEPRE22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 3 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-yt-fresh-3m-3",
+      "variantId": "var-yt-fresh-3m",
+      "email": "yospass_youtubepre_vip03@vip-akses.net",
+      "password": "YosPass#YOUTUBEPRE32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 3 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-quill-share-1m-1",
+      "variantId": "var-quill-share-1m",
+      "email": "yospass_quillbotpr_vip01@vip-akses.net",
+      "password": "YosPass#QUILLBOTPR12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "8254",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 8254. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-quill-share-1m-2",
+      "variantId": "var-quill-share-1m",
+      "email": "yospass_quillbotpr_vip02@vip-akses.net",
+      "password": "YosPass#QUILLBOTPR22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "8287",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 8287. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-quill-share-1m-3",
+      "variantId": "var-quill-share-1m",
+      "email": "yospass_quillbotpr_vip03@vip-akses.net",
+      "password": "YosPass#QUILLBOTPR32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "9387",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 9387. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-quill-priv-1m-1",
+      "variantId": "var-quill-priv-1m",
+      "email": "yospass_quillbotpr_vip01@vip-akses.net",
+      "password": "YosPass#QUILLBOTPR12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-quill-priv-1m-2",
+      "variantId": "var-quill-priv-1m",
+      "email": "yospass_quillbotpr_vip02@vip-akses.net",
+      "password": "YosPass#QUILLBOTPR22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-quill-priv-1m-3",
+      "variantId": "var-quill-priv-1m",
+      "email": "yospass_quillbotpr_vip03@vip-akses.net",
+      "password": "YosPass#QUILLBOTPR32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-scribd-priv-1m-1",
+      "variantId": "var-scribd-priv-1m",
+      "email": "yospass_scribdever_vip01@vip-akses.net",
+      "password": "YosPass#SCRIBDEVER12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-scribd-priv-1m-2",
+      "variantId": "var-scribd-priv-1m",
+      "email": "yospass_scribdever_vip02@vip-akses.net",
+      "password": "YosPass#SCRIBDEVER22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-scribd-priv-1m-3",
+      "variantId": "var-scribd-priv-1m",
+      "email": "yospass_scribdever_vip03@vip-akses.net",
+      "password": "YosPass#SCRIBDEVER32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-scribd-priv-2m-1",
+      "variantId": "var-scribd-priv-2m",
+      "email": "yospass_scribdever_vip01@vip-akses.net",
+      "password": "YosPass#SCRIBDEVER12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 2 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-scribd-priv-2m-2",
+      "variantId": "var-scribd-priv-2m",
+      "email": "yospass_scribdever_vip02@vip-akses.net",
+      "password": "YosPass#SCRIBDEVER22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 2 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-scribd-priv-2m-3",
+      "variantId": "var-scribd-priv-2m",
+      "email": "yospass_scribdever_vip03@vip-akses.net",
+      "password": "YosPass#SCRIBDEVER32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 2 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gram-share-1m-1",
+      "variantId": "var-gram-share-1m",
+      "email": "yospass_grammarlyp_vip01@vip-akses.net",
+      "password": "YosPass#GRAMMARLYP12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "1501",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 1501. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gram-share-1m-2",
+      "variantId": "var-gram-share-1m",
+      "email": "yospass_grammarlyp_vip02@vip-akses.net",
+      "password": "YosPass#GRAMMARLYP22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "7342",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 7342. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gram-share-1m-3",
+      "variantId": "var-gram-share-1m",
+      "email": "yospass_grammarlyp_vip03@vip-akses.net",
+      "password": "YosPass#GRAMMARLYP32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "4243",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 4243. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gram-priv-1m-1",
+      "variantId": "var-gram-priv-1m",
+      "email": "yospass_grammarlyp_vip01@vip-akses.net",
+      "password": "YosPass#GRAMMARLYP12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gram-priv-1m-2",
+      "variantId": "var-gram-priv-1m",
+      "email": "yospass_grammarlyp_vip02@vip-akses.net",
+      "password": "YosPass#GRAMMARLYP22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-gram-priv-1m-3",
+      "variantId": "var-gram-priv-1m",
+      "email": "yospass_grammarlyp_vip03@vip-akses.net",
+      "password": "YosPass#GRAMMARLYP32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-tv-share-1m-1",
+      "variantId": "var-tv-share-1m",
+      "email": "yospass_tradingvie_vip01@vip-akses.net",
+      "password": "YosPass#TRADINGVIE12026!",
+      "profileName": "Profil 1 (VIP User)",
+      "profilePin": "4914",
+      "additionalNotes": "Harap gunakan Profil 1 dengan PIN 4914. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-tv-share-1m-2",
+      "variantId": "var-tv-share-1m",
+      "email": "yospass_tradingvie_vip02@vip-akses.net",
+      "password": "YosPass#TRADINGVIE22026!",
+      "profileName": "Profil 2 (VIP User)",
+      "profilePin": "1148",
+      "additionalNotes": "Harap gunakan Profil 2 dengan PIN 1148. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-tv-share-1m-3",
+      "variantId": "var-tv-share-1m",
+      "email": "yospass_tradingvie_vip03@vip-akses.net",
+      "password": "YosPass#TRADINGVIE32026!",
+      "profileName": "Profil 3 (VIP User)",
+      "profilePin": "6069",
+      "additionalNotes": "Harap gunakan Profil 3 dengan PIN 6069. Dilarang mengubah data akun agar garansi tetap aktif.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-tv-priv-1m-1",
+      "variantId": "var-tv-priv-1m",
+      "email": "yospass_tradingvie_vip01@vip-akses.net",
+      "password": "YosPass#TRADINGVIE12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-tv-priv-1m-2",
+      "variantId": "var-tv-priv-1m",
+      "email": "yospass_tradingvie_vip02@vip-akses.net",
+      "password": "YosPass#TRADINGVIE22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-tv-priv-1m-3",
+      "variantId": "var-tv-priv-1m",
+      "email": "yospass_tradingvie_vip03@vip-akses.net",
+      "password": "YosPass#TRADINGVIE32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-spot-fresh-1m-1",
+      "variantId": "var-spot-fresh-1m",
+      "email": "yospass_spotifypre_vip01@vip-akses.net",
+      "password": "YosPass#SPOTIFYPRE12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-spot-fresh-1m-2",
+      "variantId": "var-spot-fresh-1m",
+      "email": "yospass_spotifypre_vip02@vip-akses.net",
+      "password": "YosPass#SPOTIFYPRE22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-spot-fresh-1m-3",
+      "variantId": "var-spot-fresh-1m",
+      "email": "yospass_spotifypre_vip03@vip-akses.net",
+      "password": "YosPass#SPOTIFYPRE32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 1 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-spot-3m-1",
+      "variantId": "var-spot-3m",
+      "email": "yospass_spotifypre_vip01@vip-akses.net",
+      "password": "YosPass#SPOTIFYPRE12026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 3 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-spot-3m-2",
+      "variantId": "var-spot-3m",
+      "email": "yospass_spotifypre_vip02@vip-akses.net",
+      "password": "YosPass#SPOTIFYPRE22026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 3 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
+    },
+    {
+      "id": "inv-var-spot-3m-3",
+      "variantId": "var-spot-3m",
+      "email": "yospass_spotifypre_vip03@vip-akses.net",
+      "password": "YosPass#SPOTIFYPRE32026!",
+      "additionalNotes": "Akun Full Private resmi bergaransi penuh 3 bulan. Bebas ganti password & email recovery.",
+      "status": "AVAILABLE",
+      "createdAt": "2026-09-30T19:38:24.540Z"
     }
   ],
   "orders": [

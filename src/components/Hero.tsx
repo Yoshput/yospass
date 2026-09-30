@@ -79,8 +79,8 @@ export default function Hero({
           isLight ? 'text-blue-50 font-medium' : 'text-slate-400'
         }`}
       >
-        Akses instan ChatGPT Plus/Pro, Google Gemini 18 Bulan, Netflix 4K, CapCut Pro, hingga Spotify.
-        Bayar langsung via QRIS, kredensial login akun tampil seketika di layar dalam &lt; 30 detik.
+        Akses instan Flagship AI (OpenAI GPT-5 Astra & o1 Pro, Claude 3.7 Sonnet & Fable, DeepSeek R1, xAI Grok 3), Canva Pro, Netflix 4K, WeTV, iQIYI, Bstation, hingga QuillBot.
+        Bayar langsung via QRIS otomatis, akun aktif seketika di layar dalam &lt; 30 detik.
       </motion.p>
 
       {/* Feature Badges Row */}

@@ -18,10 +18,11 @@ import { useToast } from '@/components/ToastContext';
 
 const CATEGORIES = [
   'Semua',
-  'AI & Productivity',
-  'Streaming & Movies',
-  'Design & Creative',
-  'Music & Audio'
+  'AI & Flagship Models',
+  'Streaming & Film',
+  'Desain & Kreatif',
+  'Edukasi & Produktivitas',
+  'Musik & Audio'
 ];
 
 export default function HomePage() {
