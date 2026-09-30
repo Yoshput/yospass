@@ -14,6 +14,7 @@ interface PaymentModalProps {
     variantName: string;
     paymentMethod: string;
     qrisPayload?: string;
+    qrImageUrl?: string;
     expiresAt: string;
   } | null;
   onClose: () => void;
@@ -131,34 +132,32 @@ export default function PaymentModal({ orderData, onClose }: PaymentModalProps) 
 
         {/* QR Code Presentation Box */}
         <div
-          className={`mt-5 p-4 rounded-2xl max-w-[240px] mx-auto shadow-xl flex flex-col items-center border ${
-            isLight ? 'bg-slate-50 border-slate-200' : 'bg-white p-4 border-white/10'
+          className={`mt-5 p-4 rounded-2xl max-w-[260px] mx-auto shadow-xl flex flex-col items-center border ${
+            isLight ? 'bg-white border-slate-200/90 shadow-slate-200/60' : 'bg-[#0f1118] border-white/10 shadow-black/60'
           }`}
         >
-          <div className="relative w-full aspect-square bg-slate-950 rounded-xl p-2 flex items-center justify-center overflow-hidden">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-white fill-current">
-              <path d="M10 10h30v30h-30z M15 15h20v20h-20z M20 20h10v10h-10z" />
-              <path d="M60 10h30v30h-30z M65 15h20v20h-20z M70 20h10v10h-10z" />
-              <path d="M10 60h30v30h-30z M15 65h20v20h-20z M20 70h10v10h-10z" />
-              <rect x="45" y="10" width="8" height="20" />
-              <rect x="45" y="35" width="8" height="8" />
-              <rect x="10" y="45" width="20" height="8" />
-              <rect x="35" y="45" width="8" height="8" />
-              <rect x="48" y="48" width="12" height="12" />
-              <rect x="65" y="45" width="25" height="8" />
-              <rect x="65" y="60" width="10" height="15" />
-              <rect x="80" y="60" width="10" height="30" />
-              <rect x="45" y="65" width="8" height="25" />
-            </svg>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="px-2 py-0.5 rounded bg-blue-600 text-white font-mono text-[9px] font-black tracking-wider uppercase shadow-md">
-                QRIS
+          <div className="relative w-full aspect-square bg-white rounded-xl p-2 flex items-center justify-center overflow-hidden border border-slate-200/80 shadow-inner">
+            {orderData.qrImageUrl ? (
+              <img
+                src={orderData.qrImageUrl}
+                alt="QRIS Pakasir Official"
+                className="w-full h-full object-contain rounded-lg"
+              />
+            ) : orderData.qrisPayload ? (
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(orderData.qrisPayload)}&size=300x300&margin=8`}
+                alt="QRIS Pakasir Official"
+                className="w-full h-full object-contain rounded-lg"
+              />
+            ) : (
+              <div className="w-full h-full bg-slate-950 flex items-center justify-center">
+                <span className="text-white font-mono text-xs">Generating QRIS...</span>
               </div>
-            </div>
+            )}
           </div>
           <span
-            className={`text-[11px] font-bold mt-2 ${
-              isLight ? 'text-slate-700' : 'text-slate-800'
+            className={`text-[11px] font-bold mt-2.5 ${
+              isLight ? 'text-slate-700' : 'text-slate-300'
             }`}
           >
             Scan via BCA, Mandiri, GoPay, OVO, Shopee

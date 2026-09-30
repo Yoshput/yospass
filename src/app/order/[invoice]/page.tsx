@@ -224,6 +224,40 @@ export default function OrderDetailPage() {
           )}
         </motion.div>
 
+        {/* Unpaid QRIS Presentation Box */}
+        {!isPaid && (
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className={`p-6 sm:p-8 rounded-3xl border mb-6 text-center shadow-lg transition-colors ${
+              isLight ? 'bg-white border-slate-200/90 shadow-slate-200/50' : 'glass-panel bg-[#0d0e15] border-white/10'
+            }`}
+          >
+            <div className="max-w-xs mx-auto">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-2">
+                Pindai QRIS Resmi Pakasir
+              </span>
+              <div className="w-56 h-56 mx-auto bg-white rounded-2xl p-3 border border-slate-200 shadow-inner flex items-center justify-center">
+                <img
+                  src={`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(order.qrisPayload || order.invoiceNumber)}&size=300x300&margin=8`}
+                  alt="QRIS Pembayaran"
+                  className="w-full h-full object-contain rounded-xl"
+                />
+              </div>
+              <p className={`text-xs mt-3 font-semibold ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                Buka aplikasi BCA, Mandiri, GoPay, OVO, atau ShopeePay Anda untuk scan QRIS di atas.
+              </p>
+              <div className="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 flex items-center justify-center gap-2 text-xs font-mono">
+                <span className={isLight ? 'text-slate-500' : 'text-slate-400'}>Total:</span>
+                <span className={`text-base font-black ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                  Rp {order.amount.toLocaleString('id-ID')}
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {/* Credentials Box (Only if PAID) */}
         {isPaid && account && (
           <motion.div
