@@ -1,0 +1,19 @@
+{
+  "name": "Lumina Pass - Akun Premium Instan",
+  "short_name": "Lumina Pass",
+  "description": "Platform Otomatis Beli Akun Digital Premium Apple Style: ChatGPT Plus, Gemini, Netflix, CapCut.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060709",
+  "theme_color": "#0071E3",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "productivity", "utilities"]
+}
