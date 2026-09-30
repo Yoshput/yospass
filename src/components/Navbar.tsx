@@ -6,6 +6,7 @@ import { Search, Sun, Moon } from 'lucide-react';
 import { PremiuminLogo } from './BrandLogos';
 import { motion } from 'motion/react';
 import { useTheme } from './ThemeContext';
+import ProductByBadge from './ProductByBadge';
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -16,54 +17,44 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className={`sticky top-0 z-40 w-full transition-all duration-300 backdrop-blur-xl border-b ${
+      className={`sticky top-0 z-50 w-full transition-all duration-300 backdrop-blur-xl border-b ${
         isLight
-          ? 'bg-white/90 border-slate-200/80 shadow-sm'
-          : 'bg-[#060709]/90 border-white/[0.08] shadow-black/50'
+          ? 'bg-white/95 border-slate-200/90 shadow-sm'
+          : 'bg-[#060709]/95 border-white/[0.08] shadow-black/50'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
         {/* YosPass Brand Monogram */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-            <PremiuminLogo className="w-8 h-8 drop-shadow-md" />
+        <Link href="/" className="flex items-center gap-2 group shrink-0">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+            <PremiuminLogo className="w-7 h-7 sm:w-8 sm:h-8 drop-shadow-md" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
               <span
-                className={`font-black text-base tracking-tight transition-colors ${
+                className={`font-black text-sm sm:text-base tracking-tight transition-colors ${
                   isLight ? 'text-slate-900 group-hover:text-blue-600' : 'text-white group-hover:text-blue-300'
                 }`}
               >
                 YOS
               </span>
-              <span className="text-[10px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded-full bg-blue-600 text-white shadow-sm">
+              <span className="text-[9px] sm:text-[10px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded-full bg-blue-600 text-white shadow-sm">
                 PASS
               </span>
             </div>
-            <p className={`text-[10px] font-semibold hidden sm:block -mt-0.5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <p className={`text-[9px] sm:text-[10px] font-semibold hidden md:block -mt-0.5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
               The Purest Gateway to Premium Apps
             </p>
           </div>
         </Link>
 
-        {/* Real-Time Auto-Fulfillment Indicator */}
-        <div
-          className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold ${
-            isLight
-              ? 'bg-emerald-50 border border-emerald-200 text-emerald-700'
-              : 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
-          }`}
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
-          </span>
-          <span className="tracking-tight">Auto-Delivery QRIS Aktif (&lt; 30 Detik)</span>
+        {/* Product by Yossika Putra - Top Navbar Badge matching reference screenshot */}
+        <div className="flex items-center justify-center shrink-0">
+          <ProductByBadge />
         </div>
 
         {/* Navigation & Theme Switcher */}
-        <div className="flex items-center gap-2 sm:gap-2.5">
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           {/* Lacak Pesanan Button */}
           <Link
             href="/cek-pesanan"
@@ -83,7 +74,7 @@ export default function Navbar() {
           <button
             onClick={toggleTheme}
             aria-label={isLight ? 'Ganti ke Mode Gelap' : 'Ganti ke Mode Terang'}
-            className={`p-2 rounded-xl transition-all cursor-pointer ${
+            className={`p-1.5 sm:p-2 rounded-xl transition-all cursor-pointer ${
               isLight
                 ? 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 border border-slate-200'
                 : 'glass-button text-slate-200 hover:text-white'

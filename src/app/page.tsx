@@ -9,7 +9,6 @@ import PaymentModal from '@/components/PaymentModal';
 import AppMarquee from '@/components/AppMarquee';
 import BenefitSection from '@/components/BenefitSection';
 import ReviewSection from '@/components/ReviewSection';
-import ProductByBadge from '@/components/ProductByBadge';
 import { Product, ProductVariant } from '@/lib/types';
 import { ShieldCheck, Zap, RefreshCw, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -126,7 +125,7 @@ export default function HomePage() {
       <AppMarquee />
 
       {/* Product Catalog Grid */}
-      <main className="max-w-6xl mx-auto w-full px-4 pt-6 pb-20 sm:pb-28 flex-1">
+      <main className="max-w-6xl mx-auto w-full px-4 pt-6 pb-12 flex-1">
         <div className="flex items-center justify-between mb-5">
           <div>
             <h2
@@ -201,19 +200,16 @@ export default function HomePage() {
         <ReviewSection />
       </main>
 
-      {/* Footer with Product By Badge */}
+      {/* Footer */}
       <footer
-        className={`border-t py-12 sm:py-16 text-center text-xs safe-bottom transition-colors ${
+        className={`border-t py-6 sm:py-8 text-center text-xs safe-bottom transition-colors ${
           isLight ? 'bg-slate-50/80 border-slate-200/90 text-slate-500' : 'bg-[#040507] border-white/[0.08] text-slate-400'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-semibold tracking-tight text-xs">
             © 2026 YosPass. The Purest Gateway to Premium Apps.
           </p>
-
-          {/* Product by Yossika Putra Erlangga with Avatar */}
-          <ProductByBadge />
 
           <div className="flex items-center gap-5">
             <a
