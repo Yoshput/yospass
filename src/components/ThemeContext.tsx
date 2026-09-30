@@ -10,22 +10,23 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'dark',
+  theme: 'light',
   toggleTheme: () => {}
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  // First time visitor ALWAYS defaults to 'light' (PulseAi Apple Style)
+  const [theme, setTheme] = useState<Theme>('light');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Read saved theme from localStorage or system preference
-    const saved = localStorage.getItem('lumina_theme') as Theme | null;
+    // Read saved theme from localStorage
+    const saved = localStorage.getItem('yospass_theme') as Theme | null;
     if (saved === 'light' || saved === 'dark') {
       setTheme(saved);
     } else {
-      // Default to dark as primary, or light if user prefers
-      setTheme('dark');
+      // First-time visitor default: Light Mode
+      setTheme('light');
     }
     setMounted(true);
   }, []);
@@ -33,13 +34,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => {
     const nextTheme: Theme = theme === 'dark' ? 'light' : 'dark';
     setTheme(nextTheme);
-    localStorage.setItem('lumina_theme', nextTheme);
+    localStorage.setItem('yospass_theme', nextTheme);
   };
 
-  // If not mounted yet, render standard dark to prevent hydration mismatch
+  // If not mounted yet, render standard light to prevent dark flashes
   return (
-    <ThemeContext.Provider value={{ theme: mounted ? theme : 'dark', toggleTheme }}>
-      <div className={mounted ? theme : 'dark'}>{children}</div>
+    <ThemeContext.Provider value={{ theme: mounted ? theme : 'light', toggleTheme }}>
+      <div className={mounted ? theme : 'light'}>{children}</div>
     </ThemeContext.Provider>
   );
 }

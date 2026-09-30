@@ -103,6 +103,7 @@ export default function ProductModal({
 
           <button
             onClick={onClose}
+            aria-label="Tutup dialog pilihan paket"
             className={`p-1.5 rounded-full transition-colors cursor-pointer ${
               isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-600' : 'bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white'
             }`}

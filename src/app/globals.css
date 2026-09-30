@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060709;
-  --foreground: #f8fafc;
+  --background: #f8fafc;
+  --foreground: #0f172a;
   --apple-blue: #0071e3;
   --apple-blue-hover: #0077ed;
 }

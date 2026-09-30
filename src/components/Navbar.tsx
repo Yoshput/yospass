@@ -69,19 +69,22 @@ export default function Navbar() {
           {/* Lacak Pesanan Button */}
           <Link
             href="/cek-pesanan"
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-sm ${
+            aria-label="Lacak Pesanan Akun Digital"
+            className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-sm ${
               isLight
                 ? 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 border border-slate-200'
                 : 'glass-button text-slate-200 hover:text-white'
             }`}
           >
             <Search className="w-3.5 h-3.5 text-blue-500" />
-            <span>Lacak Pesanan</span>
+            <span className="hidden sm:inline">Lacak Pesanan</span>
+            <span className="sm:hidden text-xs">Lacak</span>
           </Link>
 
           {/* Theme Switcher Button */}
           <button
             onClick={toggleTheme}
+            aria-label={isLight ? 'Ganti ke Mode Gelap' : 'Ganti ke Mode Terang'}
             className={`p-2 rounded-xl transition-all cursor-pointer ${
               isLight
                 ? 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 border border-slate-200'

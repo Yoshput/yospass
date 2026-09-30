@@ -6,36 +6,97 @@ import { ThemeProvider } from "@/components/ThemeContext";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://yospass.vercel.app";
+
 export const metadata: Metadata = {
-  title: "YosPass — Platform Akun Premium Instan & Tercepat | Apple Cupertino Grade",
+  metadataBase: new URL(APP_URL),
+  title: {
+    default: "YosPass — Platform Akun Premium Instan & Tercepat | Apple Cupertino Grade",
+    template: "%s | YosPass"
+  },
   description:
-    "Platform jual beli akun digital resmi otomatis: ChatGPT Plus & Pro, Google Gemini 18 Bulan, Netflix 4K UHD, CapCut Pro, Spotify, YouTube. Pengiriman instan < 30 detik via QRIS otomatis di YosPass.",
+    "Platform jual beli akun digital resmi otomatis paling rikat: ChatGPT Plus & Pro, Google Gemini 18 Bulan, Netflix 4K UHD, CapCut Pro, Spotify, YouTube. Pengiriman instan < 30 detik via QRIS otomatis.",
+  keywords: [
+    "yospass",
+    "akun premium",
+    "beli chatgpt plus",
+    "chatgpt pro murah",
+    "google gemini 18 bulan",
+    "netflix 4k uhd",
+    "capcut pro resmi",
+    "spotify premium murah",
+    "youtube premium tanpa iklan",
+    "qris otomatis",
+    "auto delivery digital accounts"
+  ],
+  authors: [{ name: "YosPass" }],
+  creator: "YosPass",
+  publisher: "YosPass",
   manifest: "/manifest.json",
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: APP_URL,
+    siteName: "YosPass",
+    title: "YosPass — Platform Akun Premium Instan & Tercepat",
+    description: "Beli akun digital premium otomatis via QRIS. Akses instan < 30 detik bergaransi resmi.",
+    images: [
+      {
+        url: "/icon.svg",
+        width: 512,
+        height: 512,
+        alt: "YosPass Monogram"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary",
+    title: "YosPass — Platform Akun Premium Instan & Tercepat",
+    description: "Beli akun digital premium otomatis via QRIS. Kredensial muncul seketika di layar Anda.",
+    images: ["/icon.svg"]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "YosPass",
+    title: "YosPass"
   },
   icons: {
     icon: "/icon.svg",
-    apple: "/icon.svg",
-  },
+    apple: "/icon.svg"
+  }
 };
 
 export const viewport: Viewport = {
-  themeColor: "#2563EB",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#2563EB" },
+    { media: "(prefers-color-scheme: dark)", color: "#060709" }
+  ],
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  viewportFit: "cover",
+  viewportFit: "cover"
 };
 
 export default function RootLayout({
