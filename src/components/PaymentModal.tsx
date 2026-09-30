@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { X, QrCode, Clock, CheckCircle2, ShieldCheck, Zap, Copy, Check } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTheme } from './ThemeContext';
+import { useToast } from './ToastContext';
 
 interface PaymentModalProps {
   orderData: {
@@ -23,6 +24,7 @@ interface PaymentModalProps {
 export default function PaymentModal({ orderData, onClose }: PaymentModalProps) {
   const router = useRouter();
   const { theme } = useTheme();
+  const { toast } = useToast();
   const isLight = theme === 'light';
 
   const [timeLeft, setTimeLeft] = useState(15 * 60); // 15 mins
@@ -55,13 +57,15 @@ export default function PaymentModal({ orderData, onClose }: PaymentModalProps) 
       });
       const json = await res.json();
       if (json.success) {
+        toast.success('Pembayaran berhasil dikonfirmasi! Mengalihkan ke dashboard akun...', 'Pembayaran Sukses');
         router.push(`/order/${orderData.invoiceNumber}`);
       } else {
-        alert(json.error || 'Gagal memproses simulasi pembayaran');
+        toast.error(json.error || 'Gagal memproses simulasi pembayaran', 'Simulasi Gagal');
         setSimulating(false);
       }
     } catch (e) {
       console.error(e);
+      toast.error('Terjadi kesalahan koneksi server.', 'Koneksi Gagal');
       setSimulating(false);
     }
   };
@@ -69,6 +73,7 @@ export default function PaymentModal({ orderData, onClose }: PaymentModalProps) 
   const copyInvoice = () => {
     navigator.clipboard.writeText(orderData.invoiceNumber);
     setCopiedInvoice(true);
+    toast.success(`Invoice ${orderData.invoiceNumber} berhasil disalin ke clipboard!`, 'Tersalin');
     setTimeout(() => setCopiedInvoice(false), 2000);
   };
 

@@ -14,6 +14,7 @@ import { Product, ProductVariant } from '@/lib/types';
 import { ShieldCheck, Zap, RefreshCw, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTheme } from '@/components/ThemeContext';
+import { useToast } from '@/components/ToastContext';
 
 const CATEGORIES = [
   'Semua',
@@ -26,6 +27,7 @@ const CATEGORIES = [
 export default function HomePage() {
   const { theme } = useTheme();
   const isLight = theme === 'light';
+  const { toast } = useToast();
 
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -93,12 +95,16 @@ export default function HomePage() {
       if (json.success) {
         setSelectedProduct(null); // close product modal
         setOrderPaymentData(json.data); // open payment QRIS modal
+        toast.success(
+          `Invoice ${json.data.invoiceNumber} berhasil disiapkan. Silakan selesaikan pembayaran via QRIS.`,
+          'Pesanan Siap'
+        );
       } else {
-        alert(json.error || 'Gagal memulai pesanan');
+        toast.error(json.error || 'Gagal memulai pesanan. Silakan periksa kembali data Anda.', 'Checkout Gagal');
       }
     } catch (err) {
       console.error(err);
-      alert('Terjadi kesalahan koneksi.');
+      toast.error('Gagal terhubung ke server. Periksa jaringan internet Anda dan coba lagi.', 'Koneksi Terputus');
     } finally {
       setCheckoutLoading(false);
     }

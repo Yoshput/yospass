@@ -20,13 +20,28 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, error: result.error }, { status: 400 });
     }
 
-    // Call Pakasir client to obtain QRIS payload
-    const qrisData = await pakasirClient.createDynamicQRIS({
-      invoiceNumber: result.order.invoiceNumber,
-      amount: result.order.amount,
-      customerPhone,
-      productName: `${result.order.productTitle} (${result.order.variantName})`
-    });
+    // Call Pakasir client to obtain QRIS payload with fallback protection
+    let qrisData;
+    try {
+      qrisData = await pakasirClient.createDynamicQRIS({
+        invoiceNumber: result.order.invoiceNumber,
+        amount: result.order.amount,
+        customerPhone,
+        productName: `${result.order.productTitle} (${result.order.variantName})`
+      });
+    } catch (pakasirErr) {
+      console.warn('[Checkout API] Pakasir QRIS creation warning, using fallback QRIS:', pakasirErr);
+      const rawQr = result.order.qrisPayload || '';
+      qrisData = {
+        success: true,
+        qrString: rawQr,
+        qrImageUrl: `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(rawQr)}&size=340x340&margin=8`,
+        expiredAt: result.order.expiresAt
+      };
+    }
+
+    const finalQrString = qrisData?.qrString || result.order.qrisPayload || '';
+    const finalQrImage = qrisData?.qrImageUrl || `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(finalQrString)}&size=340x340&margin=8`;
 
     return NextResponse.json({
       success: true,
@@ -36,13 +51,16 @@ export async function POST(req: NextRequest) {
         productTitle: result.order.productTitle,
         variantName: result.order.variantName,
         paymentMethod: result.order.paymentMethod,
-        qrisPayload: qrisData.qrString || result.order.qrisPayload,
-        qrImageUrl: qrisData.qrImageUrl,
-        expiresAt: qrisData.expiredAt || result.order.expiresAt
+        qrisPayload: finalQrString,
+        qrImageUrl: finalQrImage,
+        expiresAt: qrisData?.expiredAt || result.order.expiresAt
       }
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('API Checkout Error:', error);
-    return NextResponse.json({ success: false, error: 'Terjadi kesalahan sistem saat checkout.' }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: error?.message || 'Terjadi kesalahan sistem saat checkout.' },
+      { status: 500 }
+    );
   }
 }

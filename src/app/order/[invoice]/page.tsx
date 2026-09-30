@@ -8,6 +8,7 @@ import confetti from 'canvas-confetti';
 import { BrandIcon } from '@/components/BrandLogos';
 import { motion } from 'motion/react';
 import { useTheme } from '@/components/ThemeContext';
+import { useToast } from '@/components/ToastContext';
 import {
   CheckCircle2,
   Copy,
@@ -27,6 +28,7 @@ export default function OrderDetailPage() {
   const router = useRouter();
   const invoice = params?.invoice as string;
   const { theme } = useTheme();
+  const { toast } = useToast();
   const isLight = theme === 'light';
 
   const [order, setOrder] = useState<Order | null>(null);
@@ -71,6 +73,7 @@ export default function OrderDetailPage() {
   const copyToClipboard = (text: string, field: string) => {
     navigator.clipboard.writeText(text);
     setCopiedField(field);
+    toast.success(`${field} berhasil disalin ke clipboard!`, 'Tersalin');
     setTimeout(() => setCopiedField(null), 2000);
   };
 
@@ -85,14 +88,18 @@ export default function OrderDetailPage() {
       const json = await res.json();
       if (json.success) {
         setOrder(json.data);
+        toast.success('Pembayaran QRIS Berhasil! Akun digital Anda telah aktif seketika.', 'Aktivasi Berhasil');
         confetti({
           particleCount: 100,
           spread: 80,
           origin: { y: 0.6 }
         });
+      } else {
+        toast.error(json.error || 'Gagal memproses simulasi pembayaran.', 'Simulasi Gagal');
       }
     } catch (e) {
       console.error(e);
+      toast.error('Terjadi kesalahan jaringan.', 'Koneksi Gagal');
     } finally {
       setSimulating(false);
     }
