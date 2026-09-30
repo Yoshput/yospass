@@ -1,11 +1,11 @@
 {
-  "name": "Lumina Pass - Akun Premium Instan",
-  "short_name": "Lumina Pass",
-  "description": "Platform Otomatis Beli Akun Digital Premium Apple Style: ChatGPT Plus, Gemini, Netflix, CapCut.",
+  "name": "YosPass - Akun Premium Instan & Tercepat",
+  "short_name": "YosPass",
+  "description": "Platform Otomatis Beli Akun Digital Premium Apple Style: ChatGPT Pro/Plus, Gemini, Netflix, CapCut, Spotify, YouTube.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#060709",
-  "theme_color": "#0071E3",
+  "theme_color": "#2563EB",
   "orientation": "portrait-primary",
   "icons": [
     {

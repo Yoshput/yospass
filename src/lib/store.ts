@@ -517,7 +517,7 @@ export const dbStore = {
       tagline: newProd.tagline,
       description: newProd.description,
       badge: newProd.badge || '',
-      icon: newProd.icon || 'Lumina',
+      icon: newProd.icon || 'YosPass',
       loginUrl: newProd.loginUrl || 'https://google.com',
       variants: (newProd.variants || []).map((v, idx) => ({
         ...v,
@@ -635,7 +635,7 @@ export const dbStore = {
 
     const dateStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
     const randDigits = Math.floor(1000 + Math.random() * 9000);
-    const invoiceNumber = `LMN-${dateStr}-${randDigits}`;
+    const invoiceNumber = `YOS-${dateStr}-${randDigits}`;
 
     const expiresAt = new Date(Date.now() + 15 * 60 * 1000).toISOString(); // 15 mins
     const nowIso = new Date().toISOString();
@@ -658,7 +658,7 @@ export const dbStore = {
       amount: targetVariant.price,
       status: 'PENDING',
       paymentMethod,
-      qrisPayload: `00020101021226600016ID.CO.LUMINA.WWW011893600999000000000151440000000000520458125303360540${targetVariant.price}.005802ID5911LUMINA PASS6009PURWOKERTO62200116${invoiceNumber}630489A1`,
+      qrisPayload: `00020101021226600016ID.CO.YOSPASS.WWW011893600999000000000151440000000000520458125303360540${targetVariant.price}.005802ID5911YOSPASS6009PURWOKERTO62200116${invoiceNumber}630489A1`,
       assignedAccountId: db.inventory[availableIndex].id,
       createdAt: nowIso,
       expiresAt

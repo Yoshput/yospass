@@ -6,46 +6,66 @@ interface LogoProps {
 }
 
 /**
- * 100% OFFICIAL BRAND LOGOS
+ * 100% OFFICIAL BRAND LOGOS & PREMIUMINAJA MONOGRAM
  * Handcrafted vector assets sourced directly from official brand guidelines & Wikimedia Commons
- * ZERO AI Slop - Exact official geometry for ChatGPT, Gemini, Netflix, CapCut, Spotify, YouTube, Claude, and Lumina.
+ * ZERO AI Slop - Exact official geometry for PremiuminAja, ChatGPT, Gemini, Netflix, CapCut, Spotify, YouTube, Claude.
  */
 
-// 1. Lumina Platform Brand Monogram (Apple Cupertino Crystal Prism)
-export function LuminaLogo({ className = 'w-7 h-7' }: LogoProps) {
+// 1. YosPass Official Monogram (Futuristic Apple "Y" Key Facet in Glassmorphism)
+export function YosPassLogo({ className = 'w-7 h-7' }: LogoProps) {
   return (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <defs>
-        <linearGradient id="lmn-main-grad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#0071E3" />
-          <stop offset="50%" stopColor="#3B82F6" />
+        <linearGradient id="yos-small-grad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#38BDF8" />
+          <stop offset="45%" stopColor="#2563EB" />
           <stop offset="100%" stopColor="#1D4ED8" />
         </linearGradient>
-        <linearGradient id="lmn-shine-spec" x1="12" y1="8" x2="36" y2="40" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.85" />
-          <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.1" />
+        <linearGradient id="yos-spec-highlight" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.05" />
         </linearGradient>
       </defs>
-      <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#lmn-main-grad)" />
+      {/* Squircle base */}
+      <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#yos-small-grad)" />
+      <rect x="2" y="2" width="44" height="44" rx="12" stroke="url(#yos-spec-highlight)" strokeWidth="1" />
+
+      {/* Modern Futuristic "Y" Monogram */}
       <path
-        d="M24 10L36 24L24 38L12 24L24 10Z"
-        fill="url(#lmn-shine-spec)"
+        d="M14 12L24 23.5"
         stroke="#FFFFFF"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
+        strokeWidth="5"
+        strokeLinecap="round"
       />
-      <circle cx="24" cy="24" r="3.5" fill="#FFFFFF" />
+      <path
+        d="M34 12L24 23.5"
+        stroke="#FFFFFF"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M24 23.5V36"
+        stroke="#FFFFFF"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+
+      {/* Internal Diamond Facet Core */}
+      <polygon points="24,19 27.5,23.5 24,28 20.5,23.5" fill="#38BDF8" />
+      <circle cx="24" cy="23.5" r="1.5" fill="#FFFFFF" />
     </svg>
   );
 }
+
+// Backwards compatibility aliases
+export const PremiuminLogo = YosPassLogo;
+export const LuminaLogo = YosPassLogo;
 
 // 2. Official ChatGPT / OpenAI Rosette Logo (Exact 6-Petal Interlocking Knot)
 export function ChatGPTLogo({ className = 'w-6 h-6' }: LogoProps) {
   return (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      {/* Official ChatGPT Signature Teal Squircle */}
       <rect width="100" height="100" rx="24" fill="#10A37F" />
-      {/* Exact OpenAI Spiral Rosette Geometry */}
       <g transform="translate(7.5, 7.5) scale(0.65)">
         <path
           fillRule="evenodd"
@@ -76,9 +96,7 @@ export function GeminiLogo({ className = 'w-6 h-6' }: LogoProps) {
           <stop offset="0.672" stopColor="#1BA1E3" />
         </radialGradient>
       </defs>
-      {/* Deep Obsidian Background for maximum vibrant star contrast */}
       <rect width="48" height="48" rx="12" fill="#0C0E14" />
-      {/* Exact Google Gemini Star vector */}
       <path
         d="M40 24.048A25.566 25.566 0 0 0 24.048 40h-.096A25.563 25.563 0 0 0 8 24.048v-.096A25.563 25.563 0 0 0 23.952 8h.096A25.566 25.566 0 0 0 40 23.952v.096z"
         fill="url(#gemini-official-grad)"
@@ -101,21 +119,16 @@ export function NetflixLogo({ className = 'w-6 h-6' }: LogoProps) {
           <stop offset="100%" stopColor="#B1060F" />
         </linearGradient>
       </defs>
-      {/* Pure black squircle */}
       <rect width="100" height="100" rx="22" fill="#000000" />
-      {/* Netflix N Ribbon */}
       <g transform="translate(23, 14) scale(0.098)">
-        {/* Left vertical pillar */}
         <path
           d="M -1.15 -1.15 L 2.3 1002.67 C 75.57 988.55 133.19 990.1 198.22 984.23 V 0 Z"
           fill="url(#nflx-left-leg)"
         />
-        {/* Right vertical pillar */}
         <path
           d="M 353.81 0 H 553.19 L 555.5 1000.36 L 352.66 966.94 Z"
           fill="url(#nflx-right-leg)"
         />
-        {/* Center diagonal ribbon */}
         <path
           d="M 1.15 0 C 5.76 11.52 346.9 981.92 346.9 981.92 C 402.95 981.52 478.11 990.67 552.04 999.21 L 197.07 0 Z"
           fill="#E50914"
@@ -129,9 +142,7 @@ export function NetflixLogo({ className = 'w-6 h-6' }: LogoProps) {
 export function CapCutLogo({ className = 'w-6 h-6' }: LogoProps) {
   return (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      {/* Pure black base squircle */}
       <rect width="100" height="100" rx="22" fill="#000000" />
-      {/* Official CapCut Intersecting Vector Path */}
       <g transform="translate(13, 13) scale(0.145)">
         <path
           fillRule="evenodd"
@@ -148,9 +159,7 @@ export function CapCutLogo({ className = 'w-6 h-6' }: LogoProps) {
 export function SpotifyLogo({ className = 'w-6 h-6' }: LogoProps) {
   return (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      {/* Official Spotify Green Disc */}
       <circle cx="50" cy="50" r="48" fill="#1ED760" />
-      {/* Authentic Soundwave Paths */}
       <g transform="translate(13, 13) scale(0.15)">
         <path
           d="M406.6 231.1c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3zm-31 76.2c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm-26.9 65.6c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4z"
@@ -176,9 +185,7 @@ export function YouTubeLogo({ className = 'w-6 h-6' }: LogoProps) {
 export function ClaudeLogo({ className = 'w-6 h-6' }: LogoProps) {
   return (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      {/* Warm Anthropic Sand background */}
       <rect width="100" height="100" rx="22" fill="#2E241E" />
-      {/* Official Claude symbol */}
       <g transform="translate(10, 10) scale(0.8)">
         <path
           d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"
@@ -217,6 +224,6 @@ export function BrandIcon({ name, className = 'w-6 h-6' }: { name: string; class
     return <ClaudeLogo className={className} />;
   }
 
-  // Fallback to Lumina Apple Glyph
-  return <LuminaLogo className={className} />;
+  // Fallback to PremiuminAja Logo
+  return <PremiuminLogo className={className} />;
 }

@@ -199,7 +199,7 @@ export default function HomePage() {
                 isLight ? 'text-slate-900' : 'text-white'
               }`}
             >
-              Standar Layanan Lumina Pass
+              Standar Layanan PremiuminAja
             </h2>
             <p className={`text-xs sm:text-sm mt-2 ${isLight ? 'text-slate-600 font-medium' : 'text-slate-400'}`}>
               Sistem otomatisasi penuh tanpa perantara manual, bebas antre, dan bergaransi resmi.
@@ -271,7 +271,7 @@ export default function HomePage() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© 2026 Lumina Pass. Platform Digital Goods Otomatis.</p>
+          <p>© 2026 YosPass. Platform Akun Premium Otomatis &amp; Tercepat.</p>
           <div className="flex items-center gap-4">
             <a
               href="/cek-pesanan"

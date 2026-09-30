@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lumina Pass — Akun Premium Instan & Otomatis | Apple Cupertino Grade",
+  title: "YosPass — Platform Akun Premium Instan & Tercepat | Apple Cupertino Grade",
   description:
-    "Platform jual beli akun digital resmi otomatis: ChatGPT Plus & Pro, Google Gemini 18 Bulan, Netflix 4K UHD, CapCut Pro, Spotify, YouTube. Pengiriman instan < 30 detik via QRIS otomatis.",
+    "Platform jual beli akun digital resmi otomatis: ChatGPT Plus & Pro, Google Gemini 18 Bulan, Netflix 4K UHD, CapCut Pro, Spotify, YouTube. Pengiriman instan < 30 detik via QRIS otomatis di YosPass.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Lumina Pass",
+    title: "YosPass",
   },
   icons: {
     icon: "/icon.svg",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050507",
+  themeColor: "#2563EB",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,

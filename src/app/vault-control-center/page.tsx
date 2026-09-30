@@ -24,7 +24,7 @@ import {
   Package
 } from 'lucide-react';
 import { AdminStats, AccountInventory, Order, Product, ProductVariant } from '@/lib/types';
-import { BrandIcon, LuminaLogo } from '@/components/BrandLogos';
+import { BrandIcon, YosPassLogo } from '@/components/BrandLogos';
 import { motion, AnimatePresence } from 'motion/react';
 
 const ADMIN_PIN = '889922'; // Master Stealth PIN
@@ -100,7 +100,7 @@ export default function VaultControlCenter() {
 
   // Check session storage on mount
   useEffect(() => {
-    const saved = sessionStorage.getItem('lumina_vault_auth');
+    const saved = sessionStorage.getItem('yospass_vault_auth');
     if (saved === 'true') {
       setIsAuthenticated(true);
       fetchDashboardData();
@@ -109,9 +109,9 @@ export default function VaultControlCenter() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (pinInput === ADMIN_PIN || pinInput === 'admin123' || pinInput === 'lumina2026') {
+    if (pinInput === ADMIN_PIN || pinInput === 'admin123' || pinInput === 'yospass2026') {
       setIsAuthenticated(true);
-      sessionStorage.setItem('lumina_vault_auth', 'true');
+      sessionStorage.setItem('yospass_vault_auth', 'true');
       setPinError('');
       fetchDashboardData();
     } else {
@@ -120,7 +120,7 @@ export default function VaultControlCenter() {
   };
 
   const handleLogout = () => {
-    sessionStorage.removeItem('lumina_vault_auth');
+    sessionStorage.removeItem('yospass_vault_auth');
     setIsAuthenticated(false);
     setPinInput('');
   };
@@ -442,7 +442,7 @@ export default function VaultControlCenter() {
 
           <h1 className="text-xl font-black text-white tracking-tight">Stealth Vault Access</h1>
           <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
-            Portal administratif Lumina Pass dienkripsi. Masukkan Master PIN Otorisasi untuk membuka kontrol inventaris &amp; layanan.
+            Portal administratif YosPass dienkripsi. Masukkan Master PIN Otorisasi untuk membuka kontrol inventaris &amp; layanan.
           </p>
 
           <form onSubmit={handleLogin} className="mt-6 space-y-4">
@@ -493,10 +493,10 @@ export default function VaultControlCenter() {
       <header className="sticky top-0 z-40 bg-[#08090e]/90 backdrop-blur-xl border-b border-white/[0.08] px-4 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <LuminaLogo className="w-7 h-7" />
+            <YosPassLogo className="w-7 h-7" />
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-sm font-bold text-white tracking-tight">VAULT CONTROL CENTER</h1>
+                <h1 className="text-sm font-bold text-white tracking-tight">YOSPASS VAULT CONTROL</h1>
                 <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   STEALTH ACTIVE
                 </span>

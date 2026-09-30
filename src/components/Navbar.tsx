@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Search, ShieldCheck, Sun, Moon } from 'lucide-react';
-import { LuminaLogo } from './BrandLogos';
+import { Search, Sun, Moon } from 'lucide-react';
+import { PremiuminLogo } from './BrandLogos';
 import { motion } from 'motion/react';
 import { useTheme } from './ThemeContext';
 
@@ -25,10 +25,10 @@ export default function Navbar() {
             : 'glass-panel shadow-black/70 border-white/[0.08] text-white'
         }`}
       >
-        {/* Official Brand Monogram */}
+        {/* YosPass Brand Monogram */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-            <LuminaLogo className="w-8 h-8 drop-shadow-md" />
+            <PremiuminLogo className="w-8 h-8 drop-shadow-md" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
@@ -37,19 +37,19 @@ export default function Navbar() {
                   isLight ? 'text-slate-900 group-hover:text-blue-600' : 'text-white group-hover:text-blue-300'
                 }`}
               >
-                LUMINA
+                YOS
               </span>
-              <span className="text-[10px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded-full bg-blue-600 text-white shadow-sm">
+              <span className="text-[10px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded-full bg-blue-600 text-white shadow-sm">
                 PASS
               </span>
             </div>
-            <p className={`text-[10px] font-medium hidden sm:block -mt-0.5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              Instant Digital Fulfillment
+            <p className={`text-[10px] font-semibold hidden sm:block -mt-0.5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              The Purest Gateway to Premium Apps
             </p>
           </div>
         </Link>
 
-        {/* Real-Time Auto-Fulfillment Indicator (Anti-Slop, Professional) */}
+        {/* Real-Time Auto-Fulfillment Indicator */}
         <div
           className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold ${
             isLight
@@ -79,7 +79,7 @@ export default function Navbar() {
             <span>Lacak Pesanan</span>
           </Link>
 
-          {/* Theme Switcher Button (Apple Sun / Moon) */}
+          {/* Theme Switcher Button */}
           <button
             onClick={toggleTheme}
             className={`p-2 rounded-xl transition-all cursor-pointer ${
