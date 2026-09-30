@@ -9,6 +9,7 @@ import PaymentModal from '@/components/PaymentModal';
 import AppMarquee from '@/components/AppMarquee';
 import BenefitSection from '@/components/BenefitSection';
 import ReviewSection from '@/components/ReviewSection';
+import ProductByBadge from '@/components/ProductByBadge';
 import { Product, ProductVariant } from '@/lib/types';
 import { ShieldCheck, Zap, RefreshCw, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -200,29 +201,39 @@ export default function HomePage() {
         <ReviewSection />
       </main>
 
-      {/* Footer */}
+      {/* Footer / Halaman Terakhir dengan Space Lapang */}
       <footer
-        className={`border-t py-6 sm:py-8 text-center text-xs safe-bottom transition-colors ${
-          isLight ? 'bg-slate-50/80 border-slate-200/90 text-slate-500' : 'bg-[#040507] border-white/[0.08] text-slate-400'
+        className={`border-t transition-colors pt-12 pb-16 sm:pb-24 ${
+          isLight
+            ? 'bg-slate-50/80 border-slate-200/90 text-slate-500'
+            : 'bg-[#040507] border-white/[0.08] text-slate-400'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-semibold tracking-tight text-xs">
-            © 2026 YosPass. The Purest Gateway to Premium Apps.
-          </p>
+        <div className="max-w-6xl mx-auto px-4 flex flex-col items-center justify-center text-center">
+          {/* Product by Yossika Putra Erlangga - Prominent Center with Breathing Space */}
+          <div className="mb-8">
+            <ProductByBadge />
+          </div>
 
-          <div className="flex items-center gap-5">
-            <a
-              href="/cek-pesanan"
-              className={`transition-colors font-semibold text-xs ${
-                isLight ? 'text-slate-600 hover:text-blue-600' : 'text-slate-300 hover:text-white'
-              }`}
-            >
-              Cek Pesanan
-            </a>
-            <span className="text-emerald-500 font-bold flex items-center gap-1.5 text-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Layanan Online 24/7
-            </span>
+          {/* Sub-Footer Row with generous space */}
+          <div className="w-full max-w-4xl pt-6 border-t border-slate-200/80 dark:border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <p className="font-semibold tracking-tight">
+              © 2026 YosPass. The Purest Gateway to Premium Apps.
+            </p>
+
+            <div className="flex items-center gap-5">
+              <a
+                href="/cek-pesanan"
+                className={`transition-colors font-semibold ${
+                  isLight ? 'text-slate-600 hover:text-blue-600' : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                Cek Pesanan
+              </a>
+              <span className="text-emerald-500 font-bold flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Layanan Online 24/7
+              </span>
+            </div>
           </div>
         </div>
       </footer>
